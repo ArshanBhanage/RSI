@@ -5,7 +5,7 @@ Order is mandatory. On November 11, 2026 the owner explicitly deferred videos un
 | Milestone | Status | Evidence / next gate |
 |---|---|---|
 | M00 | CODE_VERIFIED | [Source lock](references/source-lock.md), 37 verified source files, 17 headings, integrity contract checks. Video publication deferred. |
-| M01 | NOT_STARTED | Prior milestone must pass. |
+| M01 | CODE_VERIFIED | `experiments/manifests/environment.json`; locked Python environment, authenticated Codex/GitHub, running Docker. |
 | M02 | NOT_STARTED | Prior milestone must pass. |
 | M03 | NOT_STARTED | Prior milestone must pass. |
 | L10.01 | NOT_STARTED | Prior milestone must pass. |
