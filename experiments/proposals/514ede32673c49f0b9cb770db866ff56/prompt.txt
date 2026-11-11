@@ -1,0 +1,1 @@
+Propose a semantics-preserving DuckDB SQL rewrite, maintaining aliases and all null/date behavior. Table trips is authentic NYC TLC January 2025 records. Optimize: SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) AS trips FROM trips GROUP BY 1

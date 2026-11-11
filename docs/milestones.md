@@ -7,7 +7,7 @@ Order is mandatory. On November 11, 2026 the owner explicitly deferred videos un
 | M00 | CODE_VERIFIED | [Source lock](references/source-lock.md), 37 verified source files, 17 headings, integrity contract checks. Video publication deferred. |
 | M01 | CODE_VERIFIED | `experiments/manifests/environment.json`; locked Python environment, authenticated Codex/GitHub, running Docker. |
 | M02 | CODE_VERIFIED | `data/manifests/tlc.json`, `experiments/manifests/M02-workload.json`; actual source hashes, schema and six executed reference queries. |
-| M03 | NOT_STARTED | Prior milestone must pass. |
+| M03 | CODE_VERIFIED | Frozen authority, real fixed Codex proposal, paired baseline timings, 12 contract tests and seven live isolation checks. See `experiments/manifests/M03-security.json`. |
 | L10.01 | NOT_STARTED | Prior milestone must pass. |
 | L10.02 | NOT_STARTED | Prior milestone must pass. |
 | L10.03 | NOT_STARTED | Prior milestone must pass. |

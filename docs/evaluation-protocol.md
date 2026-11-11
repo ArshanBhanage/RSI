@@ -1,0 +1,15 @@
+# Frozen evaluation protocol qf-v1
+
+The code authority, workload, thresholds and budget hashes are frozen before adaptive search in `configs/authority-lock.json`. Docker image identity is pinned for the actual run. Rebuilding on another platform may yield a different image and must be reported as a new environment, not silently treated as the same experiment.
+
+Every submitted candidate runs as SQL only. An AST allowlist rejects writes, multi-statements, file/table functions, unknown functions and tables outside `trips`, `zones` and local CTEs. DuckDB loads authentic input before disabling external access and locking configuration. Candidates cannot import Python, fork, execute shell commands or inspect evaluator files through the permitted SQL language. These claims do not establish immunity to an engine/container vulnerability.
+
+The authority runs as UID 65534 in a read-only Docker filesystem, network disabled, all capabilities dropped, no-new-privileges, one CPU, 2 GB RAM, 32 PIDs, a 64 MB noexec temporary filesystem and 90-second container deadline. A query has an 8-second interrupt deadline. No host credentials or Docker socket enter the container. Only the selected month, zones and immutable authority files are mounted read-only. Benchmarks are serialized with an OS file lock.
+
+Correctness requires identical column names/types, row multiplicity, NULLs and discrete values; finite floating-point aggregates use absolute tolerance 1e-8 and relative tolerance 1e-7. Unordered results are canonically sorted. The workload has unique group keys; this comparison is not advertised as a general approximate multiset matcher. A mismatching or failed candidate has score zero.
+
+Each candidate is paired with its baseline in five randomized warm runs. Report all timings, median and population standard deviation. First-query times are separate; because data are materialized into DuckDB beforehand, they are **not OS cold-cache times**. No cold-disk performance claim is supported. Primary score is geometric-mean paired speedup over correct matches; promotion requires >1.02 on development and no selection query below 0.95. No gain is required for an honest completed experiment.
+
+Workload roles: q01–q04 development, q05–q06 selection, q07–q08 unseen query families. January supplies search data. February is temporal transfer and is never mounted during search. Final evaluation occurs once per frozen final artifact, with a receipt that prevents silent retries. Any protocol revision requires a new experiment ID and disqualifies comparison to the old final test.
+
+Budgets: three generations, four SQL candidate evaluations per generation, two seeds (17, 29), at most six model calls per method/seed. The fixed, DREAM-inspired, AIDE²-inspired and RSIFlow conditions share the SQL cap. Token costs and meta-proposal overhead are separate measurements; equal calls are not equal compute. Hardware measurements establish laptop-scale behavior only. No confidence interval across workloads is implied by five timing repetitions.

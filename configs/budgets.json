@@ -1,0 +1,10 @@
+{
+  "protocol": "qf-v1",
+  "generations": 3,
+  "candidates_per_generation": 4,
+  "seeds": [17, 29],
+  "proposal_timeout_seconds": 180,
+  "max_model_calls_per_method_seed": 6,
+  "max_candidate_evaluations_per_method_seed": 12,
+  "notes": "Equal SQL evaluation cap; meta calls and token use reported separately. Promotion uses development and selection; final transfer once per frozen run."
+}

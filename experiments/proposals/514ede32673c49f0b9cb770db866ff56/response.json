@@ -1,0 +1,4 @@
+{
+  "reason": "DuckDB\u2019s hour() is equivalent to EXTRACT(hour FROM ...), preserving aliases, result types, and NULL behavior. This simplification likely produces the same plan; no speedup is guaranteed.",
+  "sql": "SELECT hour(tpep_pickup_datetime) AS hour, COUNT(*) AS trips FROM trips GROUP BY 1;"
+}

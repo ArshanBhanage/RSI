@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "name": "semantic_mismatch",
+      "passed": true
+    },
+    {
+      "name": "external_file_denied",
+      "passed": true
+    },
+    {
+      "name": "heldout_query_denied",
+      "passed": true
+    },
+    {
+      "name": "query_interrupted",
+      "passed": true
+    },
+    {
+      "name": "nonroot",
+      "passed": true
+    },
+    {
+      "name": "readonly",
+      "passed": true
+    },
+    {
+      "name": "network_denied",
+      "passed": true
+    }
+  ],
+  "evaluation_id": "d01ef982d0d24d669b1e8f82ad355017",
+  "passed": true,
+  "utc": "2026-11-11T22:15:31.911270+00:00"
+}

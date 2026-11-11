@@ -36,3 +36,14 @@ def data_fetch(offline: bool = False):
 @data_app.command("verify")
 def data_verify():
     print(json.dumps(dataset.verify(), indent=2))
+
+
+from . import evaluator
+
+benchmark_app = typer.Typer()
+app.add_typer(benchmark_app, name="benchmark")
+
+
+@benchmark_app.command("baseline")
+def benchmark_baseline():
+    print(json.dumps(evaluator.baseline(), indent=2))
