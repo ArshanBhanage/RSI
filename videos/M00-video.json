@@ -1,0 +1,13 @@
+{
+  "id": "M00",
+  "path": "videos/renders/M00-source-audit.mp4",
+  "sha256": "d096f20db57824beb9ae0b7676fca7aa320b610fd6bd617b2d330dfffd1043a6",
+  "duration_seconds": 108.0,
+  "video_streams": 1,
+  "narration_mode": "silent_on_screen_explanation",
+  "decode_verified": true,
+  "source_sha256": "89f8dde70946979eefa2ebe41882344f73be6d2560b1bf47edd3b247b758a586",
+  "youtube_url": null,
+  "status": "RECORDED_PENDING_UPLOAD",
+  "command_returncode": 0
+}

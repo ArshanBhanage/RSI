@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-11T22:08:01.008869+00:00",
+  "scope": "source integrity contract tests; no domain data or mocked services",
+  "checks": [
+    {
+      "check": "missing_cache_fails_closed",
+      "passed": true
+    },
+    {
+      "check": "authentic_cached_source_passes",
+      "passed": true
+    },
+    {
+      "check": "altered_source_rejected",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

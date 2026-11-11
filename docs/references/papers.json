@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://arxiv.org/abs/2609.14858v2",
+    "http_status": 200,
+    "sha256": "d13b41f6c0653119457d3f62b6162721180c773077c4042b7b920d9e4e9b5667",
+    "metadata": {
+      "citation_title": "Dream-RSI: Recursive Self-Improvement through Evolving Worlds",
+      "citation_author": "Guo, Yunsong",
+      "citation_date": "2026/09/14",
+      "citation_online_date": "2026/10/06",
+      "citation_pdf_url": "https://arxiv.org/pdf/2609.14858",
+      "citation_arxiv_id": "2609.14858",
+      "citation_abstract": "Recursive self-improvement is becoming essential for autonomous AI agents, whose progress depends on discovering high-value solutions across complex domains. Effective exploration drives this process, yet managing and improving exploration strategies remains a major bottleneck. Current systems face a fundamental dilemma: fixed strategies fail to adapt as search spaces scale, while online policy optimization must navigate vast meta-search spaces under delayed, expensive feedback from long-horizon rollouts. We introduce \\textsc{Dream-RSI}, a framework for scalable, recursively self-improving exploration. A lightweight orchestration layer makes exploration explicit and programmable while leaving the underlying base agent unchanged. Our key insight is that accumulated discovery history can act as a replay simulator over the realized search space. By dreaming within this simulator built from historical discovery trees, \\textsc{Dream-RSI} obtains immediate, low-cost off-policy feedback to evaluate and refine exploration policies without repeated, expensive online evaluation. The improved policy is then redeployed online to drive further discovery, continuously expanding the simulator pool in a self-improving loop. Across 9 tasks in 4 domains, \\textsc{Dream-RSI} achieves competitive quality and improves discovery efficiency in several settings."
+    },
+    "utc": "2026-11-06T08:53:49.783850+00:00"
+  },
+  {
+    "url": "https://arxiv.org/abs/2609.26457v1",
+    "http_status": 200,
+    "sha256": "b80bb48ab1caadf00037af8321091acb501f1d3bf16730b6272fb16c68a080e4",
+    "metadata": {
+      "citation_title": "Recursive self-improvement of AI research agents",
+      "citation_author": "Jiang, Zhengyao",
+      "citation_date": "2026/09/22",
+      "citation_online_date": "2026/09/22",
+      "citation_pdf_url": "https://arxiv.org/pdf/2609.26457",
+      "citation_arxiv_id": "2609.26457",
+      "citation_abstract": "AI agents are beginning to automate research and development across the AI stack, from improving training efficiency to optimizing inference. A natural next step is to improve the research efficiency of the agents themselves. When an AI research agent&#39;s own code is the object of optimization, each accepted rewrite becomes the agent that the next round edits. We refer to this loop as recursive self-improvement. Its significance lies in a long-standing trend, in which increased cumulative spending on R&amp;D yields diminishing returns. Sustained self-improvement offers a way to counter this trend. We present AIDE^2, a system that implements this loop for a frontier AI research agent. It proposes changes to its own code, benchmarks modified versions of itself on a suite of AI R&amp;D tasks, and keeps the changes that perform best on hidden evaluations. In an autonomous 8-day run, AIDE^2 discovered seven successive improvements, ranging from a new search policy to memory mechanisms that compress and manage the agent&#39;s growing context. These gains generalize to four held-out benchmarks spanning machine learning engineering, heuristic algorithm engineering, and physics-based weather forecasting, the last of which is out of distribution from the selection tasks. On all four, the strongest discovered agent matches or exceeds a human-engineered production research agent that ranks among the strongest on FML-Bench. On a separate held-out task family, the discovered agents also exhibit reduced reward hacking, a property the loop never explicitly optimized for: the rate falls from 55% to 32% during the run, 7 percentage points below the human-engineered agent. Together, these results show that an AI research agent can improve its own research efficiency through recursive self-improvement, and that these gains transfer to tasks and domains the loop never encountered."
+    },
+    "utc": "2026-11-06T08:53:49.791227+00:00"
+  },
+  {
+    "url": "https://arxiv.org/abs/2610.21791v2",
+    "http_status": 200,
+    "sha256": "97c96e953c7d123d3b244c9a207404904e262e880d438b71f73cdc7e1dbcc57e",
+    "metadata": {
+      "citation_title": "RSIFlow: Adaptive Self-Improvement Workflows with an Evolving Meta-Agent",
+      "citation_author": "Zhou, Shiji",
+      "citation_date": "2026/10/15",
+      "citation_online_date": "2026/11/02",
+      "citation_pdf_url": "https://arxiv.org/pdf/2610.21791",
+      "citation_arxiv_id": "2610.21791",
+      "citation_abstract": "Large language model (LLM) agents have demonstrated strong capabilities in complex tasks, including code generation, tool use, and multi-hop question answering. Existing self-improvement methods enhance agent performance through model optimization, harness evolution, and executable artifact refinement, while recursive self-improvement (RSI) further extends optimization to the improvement mechanisms themselves. However, adapting self-improvement workflows to evolving performance bottlenecks while improving workflow orchestration through execution feedback remains a key challenge. We propose \\textbf{RSIFlow}, a \\textbf{R}ecursive \\textbf{S}elf-\\textbf{I}mprovement framework that integrates adaptive work\\textbf{flow} orchestration with meta-agent capability evolution. RSIFlow diagnoses performance bottlenecks from task-agent trajectories and environmental feedback to dynamically select component-specific improvement workflows. The meta-agent then distills workflow outcomes into component-specific skills and cross-component principles, evolving its own harness to improve subsequent workflow orchestration. Experiments across six benchmarks and two backbone models show that RSIFlow achieves the SOTA average performance on all benchmarks. Ablation studies further demonstrate the contributions of adaptive workflow orchestration and meta-harness evolution. Code is available at https://github.com/1HUAN1/RSI-Flow."
+    },
+    "utc": "2026-11-06T08:53:49.791337+00:00"
+  }
+]

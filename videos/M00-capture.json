@@ -1,0 +1,20 @@
+[
+  {
+    "kind": "source_capture",
+    "path": "scripts/verify_sources.py",
+    "sha256": "89f8dde70946979eefa2ebe41882344f73be6d2560b1bf47edd3b247b758a586"
+  },
+  {
+    "kind": "execution",
+    "command": [
+      "/Users/arshan/.cache/uv/environments-v2/record-m00-468672bc03bb7f6b/bin/python",
+      "scripts/verify_sources.py",
+      "--output",
+      "experiments/manifests/M00-recorded-sources.json"
+    ],
+    "utc": "2026-11-06T08:54:50.009894+00:00",
+    "elapsed_seconds": 7.819126500049606,
+    "returncode": 0,
+    "stdout": "PASS COURSE-MAP.md\nPASS LICENSE\nPASS 10_research_studio/00_reading_frontier_research/README.md\nPASS 10_research_studio/00_reading_frontier_research/step_01_claim_vs_evidence/README.md\nPASS 10_research_studio/00_reading_frontier_research/step_02_audit_paper/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/step_01_run_demo/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/step_02_analyze_mechanism/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/step_03_extend/README.md\nPASS 10_research_studio/02_second_order_diagnostics/README.md\nPASS 10_research_studio/02_second_order_diagnostics/step_01_run_demo/README.md\nPASS 10_research_studio/02_second_order_diagnostics/step_02_analyze_probes/README.md\nPASS 10_research_studio/02_second_order_diagnostics/step_03_apply/README.md\nPASS 10_research_studio/03_scaling_coordination/README.md\nPASS 10_research_studio/03_scaling_coordination/step_01_compare/README.md\nPASS 10_research_studio/03_scaling_coordination/step_02_simulate/README.md\nPASS 10_research_studio/03_scaling_coordination/step_03_swarm/README.md\nPASS 10_research_studio/04_adaptive_workflows/README.md\nPASS 10_research_studio/04_adaptive_workflows/step_01_compare/README.md\nPASS 10_research_studio/04_adaptive_workflows/step_02_rsiflow/README.md\nPASS 10_research_studio/04_adaptive_workflows/step_03_selfhpo/README.md\nPASS 10_research_studio/05_environments_metrics/README.md\nPASS 10_research_studio/05_environments_metrics/step_01_rsi_index/README.md\nPASS 10_research_studio/05_environments_metrics/step_02_environments/README.md\nPASS 10_research_studio/05_environments_metrics/step_03_metrics/README.md\nPASS 10_research_studio/README.md\nPASS 12_october_2026_papers/01_budget_rsi/demo.py\nPASS 12_october_2026_papers/02_second_order_rsi/demo.py\nPASS README.md\nPASS LICENSE\nPASS tasks/README.md\nPASS dream_rsi/orchestrate.py\nPASS dream_rsi/learning/heuristic_search/eval.py\nPASS README.md\nPASS LICENSE\nPASS RSIFlow/skill_memory.py\nPASS RSIFlow/META_SKILLS.md\nPASS 10_research_studio/00_reading_frontier_research/step_01_claim_vs_evidence/README.md\nPASS 10_research_studio/00_reading_frontier_research/step_02_audit_paper/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/step_01_run_demo/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/step_02_analyze_mechanism/README.md\nPASS 10_research_studio/01_budget_rsi_scoring/step_03_extend/README.md\nPASS 10_research_studio/02_second_order_diagnostics/step_01_run_demo/README.md\nPASS 10_research_studio/02_second_order_diagnostics/step_02_analyze_probes/README.md\nPASS 10_research_studio/02_second_order_diagnostics/step_03_apply/README.md\nPASS 10_research_studio/03_scaling_coordination/step_01_compare/README.md\nPASS 10_research_studio/03_scaling_coordination/step_02_simulate/README.md\nPASS 10_research_studio/03_scaling_coordination/step_03_swarm/README.md\nPASS 10_research_studio/04_adaptive_workflows/step_01_compare/README.md\nPASS 10_research_studio/04_adaptive_workflows/step_02_rsiflow/README.md\nPASS 10_research_studio/04_adaptive_workflows/step_03_selfhpo/README.md\nPASS 10_research_studio/05_environments_metrics/step_01_rsi_index/README.md\nPASS 10_research_studio/05_environments_metrics/step_02_environments/README.md\nPASS 10_research_studio/05_environments_metrics/step_03_metrics/README.md\n{\"milestone\": \"M00\", \"lab_count\": 17, \"passed\": true, \"scope\": \"source integrity only; not a passed milestone or experiment\"}\n"
+  }
+]

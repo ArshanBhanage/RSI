@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "course_commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+  "labs": [
+    {
+      "id": "10.01",
+      "title": "Distinguish Claim from Evidence",
+      "source_path": "10_research_studio/00_reading_frontier_research/step_01_claim_vs_evidence/README.md"
+    },
+    {
+      "id": "10.02",
+      "title": "Audit an October 2026 Paper",
+      "source_path": "10_research_studio/00_reading_frontier_research/step_02_audit_paper/README.md"
+    },
+    {
+      "id": "10.03",
+      "title": "Run the Budget RSI Demo",
+      "source_path": "10_research_studio/01_budget_rsi_scoring/step_01_run_demo/README.md"
+    },
+    {
+      "id": "10.04",
+      "title": "Analyze the Scoring Mechanism",
+      "source_path": "10_research_studio/01_budget_rsi_scoring/step_02_analyze_mechanism/README.md"
+    },
+    {
+      "id": "10.05",
+      "title": "Extend to Your Own Edits",
+      "source_path": "10_research_studio/01_budget_rsi_scoring/step_03_extend/README.md"
+    },
+    {
+      "id": "10.06",
+      "title": "Run the SO-RSI Demo",
+      "source_path": "10_research_studio/02_second_order_diagnostics/step_01_run_demo/README.md"
+    },
+    {
+      "id": "10.07",
+      "title": "Analyze Diagnostic Probes",
+      "source_path": "10_research_studio/02_second_order_diagnostics/step_02_analyze_probes/README.md"
+    },
+    {
+      "id": "10.08",
+      "title": "Apply to Debugging Task",
+      "source_path": "10_research_studio/02_second_order_diagnostics/step_03_apply/README.md"
+    },
+    {
+      "id": "10.09",
+      "title": "Compare Scaling Approaches",
+      "source_path": "10_research_studio/03_scaling_coordination/step_01_compare/README.md"
+    },
+    {
+      "id": "10.10",
+      "title": "Simulate Leader-Follower Coordination",
+      "source_path": "10_research_studio/03_scaling_coordination/step_02_simulate/README.md"
+    },
+    {
+      "id": "10.11",
+      "title": "Simulate Swarm Evolution",
+      "source_path": "10_research_studio/03_scaling_coordination/step_03_swarm/README.md"
+    },
+    {
+      "id": "10.12",
+      "title": "Compare Workflow Adaptation",
+      "source_path": "10_research_studio/04_adaptive_workflows/step_01_compare/README.md"
+    },
+    {
+      "id": "10.13",
+      "title": "Simulate RSIFlow Meta-Agent",
+      "source_path": "10_research_studio/04_adaptive_workflows/step_02_rsiflow/README.md"
+    },
+    {
+      "id": "10.14",
+      "title": "Simulate Self-HPO Alternation",
+      "source_path": "10_research_studio/04_adaptive_workflows/step_03_selfhpo/README.md"
+    },
+    {
+      "id": "10.15",
+      "title": "Calculate RSI-Index",
+      "source_path": "10_research_studio/05_environments_metrics/step_01_rsi_index/README.md"
+    },
+    {
+      "id": "10.16",
+      "title": "Compare Environments",
+      "source_path": "10_research_studio/05_environments_metrics/step_02_environments/README.md"
+    },
+    {
+      "id": "10.17",
+      "title": "Analyze Metrics",
+      "source_path": "10_research_studio/05_environments_metrics/step_03_metrics/README.md"
+    }
+  ],
+  "files": [
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "COURSE-MAP.md",
+      "sha256": "ede621ce7fd4ae1b411d5b32a70ea56f1058265ba4afaf3f16a3ed54be6b0507",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/COURSE-MAP.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "LICENSE",
+      "sha256": "89d7717a8f2966950883cb83ae8e555830f56bc5da72586e287638c840b32420",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/LICENSE"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/00_reading_frontier_research/README.md",
+      "sha256": "31d8dea1328b18812e073458c5b3c039082b434141f8355ff5e618cf84cb899a",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/00_reading_frontier_research/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/00_reading_frontier_research/step_01_claim_vs_evidence/README.md",
+      "sha256": "baa344941a2055d8f8a05f224ea4be84f7342528574781808706a7d590a39425",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/00_reading_frontier_research/step_01_claim_vs_evidence/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/00_reading_frontier_research/step_02_audit_paper/README.md",
+      "sha256": "029a354366fca97e2cd8d2181b60246ffb3e492b3bacfdad6f107b455577379a",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/00_reading_frontier_research/step_02_audit_paper/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/01_budget_rsi_scoring/README.md",
+      "sha256": "cce743bd2588cf23ba5c9e071fba421a9761d28b37ab027b98f81c9d66593eba",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/01_budget_rsi_scoring/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/01_budget_rsi_scoring/step_01_run_demo/README.md",
+      "sha256": "423d8a1311c372599ce63167407be064fa1a4b99fcd6a9ac7d759eef335747ba",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/01_budget_rsi_scoring/step_01_run_demo/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/01_budget_rsi_scoring/step_02_analyze_mechanism/README.md",
+      "sha256": "c3a91d7373476cb585730ac460c053ea0338ead3071513d8e2ff96f40220f728",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/01_budget_rsi_scoring/step_02_analyze_mechanism/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/01_budget_rsi_scoring/step_03_extend/README.md",
+      "sha256": "880f5ba7cbc1e3e9e097529c06ef8813bea8b6c10f413df14827c14f5eb80153",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/01_budget_rsi_scoring/step_03_extend/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/02_second_order_diagnostics/README.md",
+      "sha256": "b4038ffd4211d4e4ea426eca577725d56501f2040dc19a3d26aec7920d80db17",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/02_second_order_diagnostics/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/02_second_order_diagnostics/step_01_run_demo/README.md",
+      "sha256": "fc6a3097dd427b10834f81e168e4d14d9b9d284f3b63469ad458a33b0e3a65bd",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/02_second_order_diagnostics/step_01_run_demo/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/02_second_order_diagnostics/step_02_analyze_probes/README.md",
+      "sha256": "79b0933ad6a2f98494271f2151c00da466e10213d505fe7abcf894f762453312",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/02_second_order_diagnostics/step_02_analyze_probes/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/02_second_order_diagnostics/step_03_apply/README.md",
+      "sha256": "d5fdcfcada7c378c31efa5c8bd58b04593ec9b489381e8f04adb5ce493991b75",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/02_second_order_diagnostics/step_03_apply/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/03_scaling_coordination/README.md",
+      "sha256": "a861be4dab39915b68b9f97561e7f2980660e3e215f20bcded652aa8a75c6b4f",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/03_scaling_coordination/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/03_scaling_coordination/step_01_compare/README.md",
+      "sha256": "1ee0e1e4c7f4463b06032cf31f75fa4852154ef64376aaa7e00a21dc9a96a869",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/03_scaling_coordination/step_01_compare/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/03_scaling_coordination/step_02_simulate/README.md",
+      "sha256": "fda2362a40bc872eca0b7dd0c6898946b1a9908a2877ac5466dca5dd7beb8563",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/03_scaling_coordination/step_02_simulate/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/03_scaling_coordination/step_03_swarm/README.md",
+      "sha256": "902d168278442983f9891450cdcbf1bb3c255fc5cea7423089dd7bdf8a21f85b",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/03_scaling_coordination/step_03_swarm/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/04_adaptive_workflows/README.md",
+      "sha256": "174d9e3793f557fe42b9068944b4af853c7909d281251921ceb762e1a3936611",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/04_adaptive_workflows/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/04_adaptive_workflows/step_01_compare/README.md",
+      "sha256": "d0c6b0de11848969cd826d2b8e82ea8983aeba50544a1f420375b47120ca1b64",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/04_adaptive_workflows/step_01_compare/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/04_adaptive_workflows/step_02_rsiflow/README.md",
+      "sha256": "8dd7de56be87007cec8bc955e905ad7c40e5e05201b195355d558ee0f65d3fd0",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/04_adaptive_workflows/step_02_rsiflow/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/04_adaptive_workflows/step_03_selfhpo/README.md",
+      "sha256": "89a20e88b0ac158dffed7ea7716a8c8a4d0684cec092d770f8d6f084fe003a6b",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/04_adaptive_workflows/step_03_selfhpo/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/05_environments_metrics/README.md",
+      "sha256": "552ecf06349a1f16e77be5ff9507b775073ea09741a4343fb345edde44d638cb",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/05_environments_metrics/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/05_environments_metrics/step_01_rsi_index/README.md",
+      "sha256": "f7f70c75ed249ae9e3ceaace2918be3fe247e9c04aa8a72d68683c26d7e51f42",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/05_environments_metrics/step_01_rsi_index/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/05_environments_metrics/step_02_environments/README.md",
+      "sha256": "5d5a7471d86655ebc3b2126f95133994c912695194ea9341502dec0b3e22e984",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/05_environments_metrics/step_02_environments/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/05_environments_metrics/step_03_metrics/README.md",
+      "sha256": "ecee42c1fa0b6c6538289e9af935d23d5749c75a59dd6094a8e06d77cd5ac5ea",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/05_environments_metrics/step_03_metrics/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "10_research_studio/README.md",
+      "sha256": "030fe4ca9bc238c342cf95b41c3e391a0a25360a5344848dfa4c4ec62fcdea65",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/10_research_studio/README.md"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "12_october_2026_papers/01_budget_rsi/demo.py",
+      "sha256": "6baaa291a28048cfb3f1e23ef564c35b146dca3e6a7f4ebe699bae79f054d015",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/12_october_2026_papers/01_budget_rsi/demo.py"
+    },
+    {
+      "repository": "dlmastery/simple-coding-harness",
+      "commit": "fabd4c79207df6a6a144c22fb1703fc074a048e7",
+      "path": "12_october_2026_papers/02_second_order_rsi/demo.py",
+      "sha256": "df1c318c417fda72a92b1d344f34747c730a040da679b9a2239b0f7c866607b8",
+      "url": "https://raw.githubusercontent.com/dlmastery/simple-coding-harness/fabd4c79207df6a6a144c22fb1703fc074a048e7/12_october_2026_papers/02_second_order_rsi/demo.py"
+    },
+    {
+      "repository": "google-research/dream-rsi",
+      "commit": "8ec35bd2538220517ce1bfca4282db21b8c518db",
+      "path": "README.md",
+      "sha256": "f05fb9eee3d877b4d759c7f8e6a9e8fd7a8f824860edbfade48554fa1361718c",
+      "url": "https://raw.githubusercontent.com/google-research/dream-rsi/8ec35bd2538220517ce1bfca4282db21b8c518db/README.md"
+    },
+    {
+      "repository": "google-research/dream-rsi",
+      "commit": "8ec35bd2538220517ce1bfca4282db21b8c518db",
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "url": "https://raw.githubusercontent.com/google-research/dream-rsi/8ec35bd2538220517ce1bfca4282db21b8c518db/LICENSE"
+    },
+    {
+      "repository": "google-research/dream-rsi",
+      "commit": "8ec35bd2538220517ce1bfca4282db21b8c518db",
+      "path": "tasks/README.md",
+      "sha256": "b2efae4f3e675f804a3c4ee596d87755a963657594520847a933748cd4118305",
+      "url": "https://raw.githubusercontent.com/google-research/dream-rsi/8ec35bd2538220517ce1bfca4282db21b8c518db/tasks/README.md"
+    },
+    {
+      "repository": "google-research/dream-rsi",
+      "commit": "8ec35bd2538220517ce1bfca4282db21b8c518db",
+      "path": "dream_rsi/orchestrate.py",
+      "sha256": "5c192323bf3e3a17400734543294d79ca3686b985b2aa8c76383135d5909bb26",
+      "url": "https://raw.githubusercontent.com/google-research/dream-rsi/8ec35bd2538220517ce1bfca4282db21b8c518db/dream_rsi/orchestrate.py"
+    },
+    {
+      "repository": "google-research/dream-rsi",
+      "commit": "8ec35bd2538220517ce1bfca4282db21b8c518db",
+      "path": "dream_rsi/learning/heuristic_search/eval.py",
+      "sha256": "a7dd979919350dada6fae417545ae717815075815b28b351b02d5da2f60eebf4",
+      "url": "https://raw.githubusercontent.com/google-research/dream-rsi/8ec35bd2538220517ce1bfca4282db21b8c518db/dream_rsi/learning/heuristic_search/eval.py"
+    },
+    {
+      "repository": "1HUAN1/RSI-Flow",
+      "commit": "496d3cfb9ff39997d107d0ff29e746b07e638180",
+      "path": "README.md",
+      "sha256": "7ffde69cdf60618eb11247f06133d61f8facbaf8f6d4e292028122a00780bd1e",
+      "url": "https://raw.githubusercontent.com/1HUAN1/RSI-Flow/496d3cfb9ff39997d107d0ff29e746b07e638180/README.md"
+    },
+    {
+      "repository": "1HUAN1/RSI-Flow",
+      "commit": "496d3cfb9ff39997d107d0ff29e746b07e638180",
+      "path": "LICENSE",
+      "sha256": "a108dc752fb9db606809748d0c0bdf03277ba6e829ee1ac96cf523c753134086",
+      "url": "https://raw.githubusercontent.com/1HUAN1/RSI-Flow/496d3cfb9ff39997d107d0ff29e746b07e638180/LICENSE"
+    },
+    {
+      "repository": "1HUAN1/RSI-Flow",
+      "commit": "496d3cfb9ff39997d107d0ff29e746b07e638180",
+      "path": "RSIFlow/skill_memory.py",
+      "sha256": "45ad31075561c5ee180145ece1aef7098fe34427cb5a15e9fde2cf667d5bffaf",
+      "url": "https://raw.githubusercontent.com/1HUAN1/RSI-Flow/496d3cfb9ff39997d107d0ff29e746b07e638180/RSIFlow/skill_memory.py"
+    },
+    {
+      "repository": "1HUAN1/RSI-Flow",
+      "commit": "496d3cfb9ff39997d107d0ff29e746b07e638180",
+      "path": "RSIFlow/META_SKILLS.md",
+      "sha256": "4e2e985dfc6c880a7ac8d97cf89146771db61e94b519386b3800c1d0284b5846",
+      "url": "https://raw.githubusercontent.com/1HUAN1/RSI-Flow/496d3cfb9ff39997d107d0ff29e746b07e638180/RSIFlow/META_SKILLS.md"
+    }
+  ]
+}
