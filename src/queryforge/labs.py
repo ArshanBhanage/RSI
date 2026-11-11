@@ -58,3 +58,55 @@ def run(lab_id: str) -> dict:
     }
     save(ROOT / "experiments/labs" / f"{lab_id}.json", report)
     return report
+
+
+def paper_audit() -> dict:
+    audit = json.loads((ROOT / "research/paper-audit.json").read_text())
+    sources = json.loads((ROOT / "docs/references/course-papers.json").read_text())
+    source = next(p for p in sources if p["arxiv_id"] == audit["paper"])
+    fields = [
+        "citation",
+        "changed_object",
+        "heldout",
+        "budget",
+        "license",
+        "cross_check",
+        "adaptation",
+    ]
+    checks = {key: isinstance(audit.get(key), str) and len(audit[key]) > 20 for key in fields}
+    checks["title_matches_publisher"] = (
+        audit["citation"] in source["sources"][0]["metadata"]["citation_title"]
+    )
+    assert all(checks.values())
+    return {
+        "checks": checks,
+        "audit": audit,
+        "source_hashes": source["sources"],
+        "interpretation": "Validator establishes audit completeness and title identity, not independent truth of paper claims.",
+    }
+
+
+RUNNERS["10.02"] = paper_audit
+
+
+def budget_demo() -> dict:
+    from .evaluator import evaluate
+    from .search import proposals
+
+    proposed = proposals(
+        ["q01", "q02", "q03", "q04"],
+        8,
+        "Use two structurally different rewrites per task. This is initial calibration.",
+    )
+    actual = evaluate(proposed["response"]["candidates"], "lab-10.03-calibration")
+    assert len(actual["records"]) == 8
+    assert any(x["correct"] for x in actual["records"])
+    return {
+        "proposal_id": proposed["proposal_id"],
+        "evaluation_id": actual["id"],
+        "records": actual["records"],
+        "interpretation": "Authentic calibration executions; no synthetic scorer labels and no recursive-improvement claim.",
+    }
+
+
+RUNNERS["10.03"] = budget_demo

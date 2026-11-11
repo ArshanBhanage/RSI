@@ -1,0 +1,11 @@
+{
+  "paper": "2610.29121",
+  "citation": "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run",
+  "changed_object": "Coding-agent scaffold diffs; readout estimates child value before expansion",
+  "heldout": "HumanEval+ and Polyglot held-out splits are distinct from fit and steering splits",
+  "budget": "Calibration evaluations count against matched checker budgets; the score predictor is frozen within each run",
+  "license": "arXiv perpetual non-exclusive distribution license is not an open-source code license",
+  "cross_check": "DREAM-RSI revises exploration policy by replay rather than using a fixed linear diff scorer",
+  "source_correction": "The course claims other models and Polyglot were untested, but the original paper reports Claude Sonnet 4.5 and Polyglot. Use the paper, not that course summary, as authority.",
+  "adaptation": "SQL diff scoring on measured latency is a reduced mechanism exercise; no GPT-4o benchmark reproduction or original-scale training claim"
+}

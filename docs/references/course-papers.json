@@ -1,0 +1,374 @@
+[
+  {
+    "arxiv_id": "2610.29121",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.29121",
+        "resolved_url": "https://arxiv.org/abs/2610.29121",
+        "sha256": "3b2820b4b88d1071c9088b343c18f639c25acee51dc3064971ec9778dc725318",
+        "metadata": {
+          "citation_title": [
+            "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run"
+          ],
+          "citation_author": [
+            "Darzi, Erfan",
+            "Balija, Sree Bhargavi",
+            "He, Sheng"
+          ],
+          "citation_date": [
+            "2026/10/21"
+          ],
+          "citation_online_date": [
+            "2026/10/21"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.29121"
+          ],
+          "citation_arxiv_id": [
+            "2610.29121"
+          ],
+          "citation_abstract": [
+            "A coding agent that rewrites its own scaffold has to choose which proposed edit to expand before that edit has been evaluated, and the search then has to return one agent. Each run fits one linear readout on the parent's steering-split solve rate and eight coordinates of the proposed diff, from 96 scaffold edits labeled by four evaluations of a 16-instance fit split, and then freezes the coefficients. HumanEval+ reserves 48 instances as the steering split and Polyglot reserves 64. That split scores parents and keeps an archive of four nodes. Huxley-G\\\"odel Machine selection draws a parent by Thompson sampling on the steering counts of nodes that have already been evaluated, and it expands the child that parent proposes. Every method then returns the earliest evaluated node whose steering-split solve count is maximal. The tables report the held-out score of that node on the other 100 HumanEval+ instances and the other 145 Polyglot instances, next to the root scaffold and the calibration edit with the highest fit-split label. Twelve runs of GPT-4o return a node at 87.0% on held-out HumanEval+, against 84.2% for the parent-rate ablation. On that split Huxley-G\\\"odel Machine selection returns 85.1%, the root is at 81.2%, and the calibration-best edit is at 82.8%. On the same split Claude Sonnet 4.5 returns 86.6%, beside 86.5% for Huxley-G\\\"odel Machine selection, 85.3% for the parent-rate ablation, and 85.1% for the calibration-best edit."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.29121",
+        "resolved_url": "https://arxiv.org/html/2610.29121",
+        "sha256": "14a763fba44f5f069135724cb3f2787504e702df40949cd5056430ec3aa5b756",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.05701",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.05701",
+        "resolved_url": "https://arxiv.org/abs/2610.05701",
+        "sha256": "406675d73af7e733c41e4e61f3fff0dbd4ae989aae0531806aa571027b919878",
+        "metadata": {
+          "citation_title": [
+            "Second-Order Problem Solving for Recursive Self-Improvement in Formal Verification"
+          ],
+          "citation_author": [
+            "Jiang, Yuxuan",
+            "Vempaty, Aditya",
+            "Jagmohan, Ashish"
+          ],
+          "citation_date": [
+            "2026/10/05"
+          ],
+          "citation_online_date": [
+            "2026/10/06"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.05701"
+          ],
+          "citation_arxiv_id": [
+            "2610.05701"
+          ],
+          "citation_abstract": [
+            "Recursive self-improvement (RSI) enables agents to iteratively optimize their workflows via execution feedback. However, standard RSI typically operates as a first-order optimizer: it repeatedly patches surface-level parameters in response to immediate failure symptoms, often leading to trial-and-error thrashing without resolving underlying mechanisms. To address this limitation, we introduce SO-RSI, a framework that elevates workflow optimization to a second-order diagnostic inquiry, investigating why failures occur before committing to structural interventions. SO-RSI passively monitors execution traces for three structural anomalies (recurrence, opposing edits, and expectation mismatch) to trigger targeted mechanism investigations. By executing lightweight diagnostic probes and maintaining persistent inquiry memory across RSI rounds, SO-RSI accumulates causal evidence to guide systematic workflow edits rather than parameter patches. Across Lean 4 proof generation and Verus-based verifiable code generation, SO-RSI improves final held-out pass rates over Naive RSI by 21.8 and 25.8 percentage points under matched 24-hour search budgets. Behavioral analyses further confirm that SO-RSI substantially suppresses failure recurrence and eliminates unproductive zero-progress optimization loops."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.05701",
+        "resolved_url": "https://arxiv.org/html/2610.05701",
+        "sha256": "a0e1c6f4af5eba671b92959b5cf6d108fe160af502fc4ffa2e5917c03531f6f7",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.18083",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.18083",
+        "resolved_url": "https://arxiv.org/abs/2610.18083",
+        "sha256": "d723446dc6d0f32ae8075962f1166173b244ba732bcb069ebff98a8f822f2a96",
+        "metadata": {
+          "citation_title": [
+            "AReaL-RSI: Adaptive Scaling and Coordination of Recursive Self-Improvement"
+          ],
+          "citation_author": [
+            "Zhou, Wenhao",
+            "Song, Jiajun",
+            "Wang, Haitao",
+            "Qiu, Zipeng",
+            "Peng, Yingqi",
+            "Xu, Ruida",
+            "Li, Jiale",
+            "Li, Wenshuang",
+            "Xu, Shusheng",
+            "Dong, Wei",
+            "Dai, Hao",
+            "Yang, Tongkai",
+            "Gao, Yi",
+            "Yuan, Binhang"
+          ],
+          "citation_date": [
+            "2026/10/13"
+          ],
+          "citation_online_date": [
+            "2026/10/13"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.18083"
+          ],
+          "citation_arxiv_id": [
+            "2610.18083"
+          ],
+          "citation_abstract": [
+            "Scaling recursive self-improvement requires additional computation to produce useful research progress in reaching persistent objectives. Intuitively, more researcher agents can explore more hypotheses, but early evaluation scores might misrepresent their promise, shared findings could lose their applicability conditions, and useful procedures could remain confined to completed investigations. In this paper, we present AReaL-RSI, a framework for organizing a persistent research team of agents without updating backbone LLM weights. We formulate the scaling problem in terms of evaluated outcomes and whole-system resource expenditure. Concretely, a leader agent selects task-appropriate research orientations and guides ongoing investigations; conditional memory sharing distinguishes unresolved problems from supported findings and enables recipient adaptation. During recursive evolution, after each campaign, evidence-based review revises researcher orientation, knowledge, and skills for later campaigns. Experiments compare AReaL-RSI with Codex-Goal on downstream harness optimization, GPU kernel optimization, and AI research tasks using two backbones. Under the reported resource allocations, AReaL-RSI improves Terminal Bench performance by 2.2 percentage points for each backbone and increases mean KernelBench speedup by 32.2-36.8%; further scalability comparisons favor the design of AReaL-RSI over native scaling: combining experience sharing with specialized researcher roles yields 1.9-27.5% lower kernel latency than independent exploration and 1.3-33.9% lower latency than sharing alone across all seven comparable task-backbone pairs."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.18083",
+        "resolved_url": "https://arxiv.org/html/2610.18083",
+        "sha256": "61a7fe53a782cd2d6c522997c728d2157aef65bb0067705bf55526109f6efd3c",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.20431",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.20431",
+        "resolved_url": "https://arxiv.org/abs/2610.20431",
+        "sha256": "7796bdbe2d8a672892fcdc3926d4ea6d9fbe1f32fed14daa4414101a57507ff6",
+        "metadata": {
+          "citation_title": [
+            "SwarmRSI: Recursive Self-Improvement through Evolving Scientific Agent Swarm"
+          ],
+          "citation_author": [
+            "Meng, Qianru",
+            "Zhang, Xi",
+            "Papakostas, Konstantinos",
+            "Cao, Congfeng",
+            "Hu, Wenxiang",
+            "Lu, Tianyi",
+            "Zhang, Xiao",
+            "Zhou, Lun",
+            "Meng, Zaiqiao",
+            "Ren, Zhaochun",
+            "Yan, Xiaohui",
+            "Lyu, Yougang"
+          ],
+          "citation_date": [
+            "2026/10/14"
+          ],
+          "citation_online_date": [
+            "2026/11/02"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.20431"
+          ],
+          "citation_arxiv_id": [
+            "2610.20431"
+          ],
+          "citation_abstract": [
+            "Recursive self-improvement (RSI) in scientific research aims to improve agents' research capabilities through their own experimental experience. Scientific agent swarms can combine evidence and implementations from different research directions to guide their agents' subsequent experiments. However, poor experimental results can leave unclear whether to revise a hypothesis or its implementation, while overall program scores can hide components useful to other agents. To address these challenges, we introduce SwarmRSI, a framework that evolves scientific agent swarms for recursive self-improvement. We devise Feedback-Guided Swarm Mutation to refine hypotheses and their implementations using experimental feedback from other agents. We also propose Complementary Swarm Recombination to reuse retained hypotheses and complementary program components across agents, allowing partial results to support new research. Recursive Swarm Evolution integrates both mechanisms into a feedback loop, using new experimental evidence to guide subsequent research. Experiments on OpenProblems, NatureBench and MLE-Bench Lite demonstrate SwarmRSI's state-of-the-art (SOTA) performance. Further evaluations show that accumulated research experience improves performance on held-out tasks. Biologists also reproduce its programs for follow-up biological analyses."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.20431",
+        "resolved_url": "https://arxiv.org/html/2610.20431",
+        "sha256": "ebecce8e358774fbf6465259c57ba744a52dd57cba95666cb4b63e047f90e99f",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.22791",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22791",
+        "resolved_url": "https://arxiv.org/abs/2610.22791",
+        "sha256": "f007a4750105fc56ff3130fda0829f17520e06c7d7a62540f6c0d6abcfe18be6",
+        "metadata": {
+          "citation_title": [
+            "Self-Evolving Coding Agents via Harness-Policy Optimization"
+          ],
+          "citation_author": [
+            "Wei, Zhepei",
+            "Yao, Wenlin",
+            "Peng, Baolin",
+            "Wang, Danqing",
+            "Wu, Qianhui",
+            "Cheng, Hao",
+            "Meng, Yu",
+            "Gao, Jianfeng"
+          ],
+          "citation_date": [
+            "2026/10/16"
+          ],
+          "citation_online_date": [
+            "2026/10/16"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.22791"
+          ],
+          "citation_arxiv_id": [
+            "2610.22791"
+          ],
+          "citation_abstract": [
+            "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment. Indeed, harness and policy are mutually reinforcing and evolving only one component is suboptimal---a harness tuned for one checkpoint may not target the failure modes of an updated policy, while policy learning remains limited to the trajectories elicited by a fixed harness. In light of this, we propose Self-HPO, a recursive self-improving framework for coding agents that alternates harness and policy optimization, using the evolving policy as its own harness proposer. Specifically, in each round, the current policy first analyzes its own failures and proposes new harness candidates (H-step). The policy is then updated through reinforcement learning (RL) under the selected harness (P-step), and hard tasks identified during training form the next harness search set, keeping harness optimization targeted to the policy's evolving failure modes. Across three coding benchmarks, Self-HPO consistently outperforms harness-only and policy-only baselines, improving Qwen3.5-35B-A3B's average resolve rate from 57.8% to 64.8%, with gains generalizing to out-of-distribution settings. Further analysis shows that both optimized components retain gains even when paired with their base counterparts, while their joint gain exceeds the sum of their individual gains. Self-HPO also improves reliability (Pass@1) and expands the capability frontier (Pass@k) over the base agent. Additionally, we show that with a stronger external model (e.g., Opus 4.8) as the harness proposer, the same framework yields a further performance boost."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.22791",
+        "resolved_url": "https://arxiv.org/html/2610.22791",
+        "sha256": "6b59b9c00dc4902d9aa83e01842e3e60aea2172ad6a90abeb3ddb501fc1203a9",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.10310",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.10310",
+        "resolved_url": "https://arxiv.org/abs/2610.10310",
+        "sha256": "91f26559027b41d6a70d741133d933b0a688f310e0a51ff2b74327c21ff3f844",
+        "metadata": {
+          "citation_title": [
+            "RSIGym: A Flexible Environment for Recursive Self-Improvement"
+          ],
+          "citation_author": [
+            "Meng, Fanqing",
+            "Du, Lingxiao",
+            "Lu, Haocheng",
+            "Chen, Qiguang",
+            "Zhao, Ziqi",
+            "Wu, Zijian",
+            "Zhuo, Jiayuan",
+            "Hu, Mengkang",
+            "Shieh, Michael Qizhe"
+          ],
+          "citation_date": [
+            "2026/10/07"
+          ],
+          "citation_online_date": [
+            "2026/10/07"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.10310"
+          ],
+          "citation_arxiv_id": [
+            "2610.10310"
+          ],
+          "citation_abstract": [
+            "Recursive self-improvement requires carrying accepted changes into later improvement cycles, while studying agent-proposed changes also requires substantial research infrastructure. Existing settings often leave agents to rebuild routine infrastructure or restrict exploration to individual components. We introduce RSIGym, an agent-native research environment based on Everything as a Service (EaaS). RSIGym exposes training, inference, rollout, evaluation, and sandbox execution through reusable services, with shared budget and permission controls supporting Data, Harness, and Joint improvement tracks. This design enables agents to investigate individual interventions and jointly optimize data, training settings, and execution harnesses within the same environment. We define RSI-Index as the mean fraction of the remaining performance gap closed across five benchmarks covering software engineering, terminal interaction, mathematics, scientific reasoning, and skill-based tasks. Comparing six frontier research models in independent Joint runs, Opus 5 achieves the highest RSI-Index of 0.4809 under a $500 platform-service budget per benchmark run. Its selected systems improve all five benchmarks, raising SWE-bench Verified from 17.67% to 50.33% and AIME from 31.67% to 97.78%. Additional experiments examine DSH-harness refinement, budget variation, and restricted network access, while recorded trajectories reveal how agents diagnose failures and select candidates. We open-source the full RSIGym codebase and results to support reproducibility and further research."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.10310",
+        "resolved_url": "https://arxiv.org/html/2610.10310",
+        "sha256": "4259aeb3ca31e01788fcfe0299cda942728721b472961b33f73bc598f61153d7",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.22192",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22192",
+        "resolved_url": "https://arxiv.org/abs/2610.22192",
+        "sha256": "d77e48e2d2f8d87ab75bd9316ad7cddfc5951c529094c507f3ab0bd16e95bdae",
+        "metadata": {
+          "citation_title": [
+            "Terminal-RSI: Recursive Self-Improving Terminal Agents via Recursive Self-Rewrite and Policy-Refine"
+          ],
+          "citation_author": [
+            "Yang, Junyao",
+            "Li, Zongxia",
+            "Shi, Yucheng",
+            "Li, Zhongzhi",
+            "Wang, Ruhan",
+            "Zhou, Ruiwen",
+            "Mi, Haitao",
+            "Yan, Shuicheng",
+            "Liang, Leowei"
+          ],
+          "citation_date": [
+            "2026/10/15"
+          ],
+          "citation_online_date": [
+            "2026/10/30"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.22192"
+          ],
+          "citation_arxiv_id": [
+            "2610.22192"
+          ],
+          "citation_abstract": [
+            "Converting verifier outcomes into useful policy updates and partial progress into complete task resolution is crucial for terminal agents. We present Terminal-RSI, which alternates Recursive Self-Rewrite (RSR) of verified trajectories with critic-inheriting Recursive Policy-Refine (RPR). We formulate Turn-Boundary Skip-Observation GAE (TB-GAE) to retain token-specific baselines while applying decay across interaction turns. Family Dense Reward (FDR) calibrates semantic progress across task families; Success-Prioritized Reward (SPR) separates strict success from bounded partial credit. A Warm-up Critic Model, recursive critic handoff, and stage-specific learning rates coordinate the two refinement phases. The five-stage sequence from Qwen3.8-27B base model through RSR-1, RPR-1, RSR-2, and RPR-2 yields Terminal-RSI-27B: 19.84% on Terminal-Bench 4.0, 86.52% on Terminal-Bench 2.1, 16.95% on Terminal-Bench 3.0, and 79.00% on Terminal-Bench Hard. On LHTB, process reward rises from 0.21 to 0.37 and strict completion from 0/46 to 5/46; SWR100 success doubles from 3.00% to 6.00%. By recursively coupling verified trajectory rewriting with critic-inheriting policy refinement, each retained stage consolidates discovered behaviors and progressively advances the agent from partial local repairs to strict terminal verification."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.22192",
+        "resolved_url": "https://arxiv.org/html/2610.22192",
+        "sha256": "a038335905d50108216609aed65777093c09d1fafb00403800e8c2fc47e97d8c",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "arxiv_id": "2610.22740",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2610.22740",
+        "resolved_url": "https://arxiv.org/abs/2610.22740",
+        "sha256": "524f211fda3ac8eb2060cff17f0d015309fe3fcbfaa9b03be38d40e80994e101",
+        "metadata": {
+          "citation_title": [
+            "R$^2$Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop"
+          ],
+          "citation_author": [
+            "Zhang, Mingda",
+            "Huang, Yun",
+            "Huang, Qiang",
+            "Li, Yanjin",
+            "Qian, Rui",
+            "Zhao, Qichao",
+            "Shen, Tiesunlong",
+            "Zhao, Na",
+            "Wang, Jian",
+            "Tang, Xiaoying"
+          ],
+          "citation_date": [
+            "2026/10/15"
+          ],
+          "citation_online_date": [
+            "2026/10/22"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.22740"
+          ],
+          "citation_arxiv_id": [
+            "2610.22740"
+          ],
+          "citation_abstract": [
+            "In recent years, agentic orchestration has been widely applied to solve complex human tasks. However, existing orchestration learning still faces key challenges, including hand-designed curricula, advantage collapse when a task's rollouts all reach the same outcome, and unreliable evaluation signals that judge each skill by one noisy score. To address these challenges, we propose R$^2$Orch, a new paradigm of Recursive Self-Play Orchestration: an inner loop of self-play that improves the orchestrator on self-chosen tasks, and an outer loop that improves how the inner loop improves. To support this paradigm, we introduce Recursive Learnability, a training objective that rewards a Proposer for choosing tasks whose rollouts keep reaching different outcomes as skills are withdrawn. Built on this objective, we further propose Skill Withdrawal, in which the outer loop withdraws each skill once a controlled evaluation within self-play shows that the orchestrator performs as well without it. Moreover, the two loops form one cycle: failures are distilled into skills, skills into parameters, and withdrawals lead the Proposer to new failures, so the orchestrator moves toward zero-skill deployment. Experimental results on twelve datasets show that R$^2$Orch consistently outperforms baselines across question answering, math, code, and interactive tasks. Our code is available at https://github.com/beita6969/R2Orch."
+          ]
+        }
+      },
+      {
+        "url": "https://arxiv.org/html/2610.22740",
+        "resolved_url": "https://arxiv.org/html/2610.22740",
+        "sha256": "e679933a2db49df27b7561fa5c0f3b9cb5d86b4b20f6d548339b6f097557e373",
+        "metadata": {}
+      }
+    ]
+  }
+]

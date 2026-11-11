@@ -1,0 +1,68 @@
+{
+  "lab_id": "10.02",
+  "result": {
+    "audit": {
+      "adaptation": "SQL diff scoring on measured latency is a reduced mechanism exercise; no GPT-4o benchmark reproduction or original-scale training claim",
+      "budget": "Calibration evaluations count against matched checker budgets; the score predictor is frozen within each run",
+      "changed_object": "Coding-agent scaffold diffs; readout estimates child value before expansion",
+      "citation": "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run",
+      "cross_check": "DREAM-RSI revises exploration policy by replay rather than using a fixed linear diff scorer",
+      "heldout": "HumanEval+ and Polyglot held-out splits are distinct from fit and steering splits",
+      "license": "arXiv perpetual non-exclusive distribution license is not an open-source code license",
+      "paper": "2610.29121",
+      "source_correction": "The course claims other models and Polyglot were untested, but the original paper reports Claude Sonnet 4.5 and Polyglot. Use the paper, not that course summary, as authority."
+    },
+    "checks": {
+      "adaptation": true,
+      "budget": true,
+      "changed_object": true,
+      "citation": true,
+      "cross_check": true,
+      "heldout": true,
+      "license": true,
+      "title_matches_publisher": true
+    },
+    "interpretation": "Validator establishes audit completeness and title identity, not independent truth of paper claims.",
+    "source_hashes": [
+      {
+        "metadata": {
+          "citation_abstract": [
+            "A coding agent that rewrites its own scaffold has to choose which proposed edit to expand before that edit has been evaluated, and the search then has to return one agent. Each run fits one linear readout on the parent's steering-split solve rate and eight coordinates of the proposed diff, from 96 scaffold edits labeled by four evaluations of a 16-instance fit split, and then freezes the coefficients. HumanEval+ reserves 48 instances as the steering split and Polyglot reserves 64. That split scores parents and keeps an archive of four nodes. Huxley-G\\\"odel Machine selection draws a parent by Thompson sampling on the steering counts of nodes that have already been evaluated, and it expands the child that parent proposes. Every method then returns the earliest evaluated node whose steering-split solve count is maximal. The tables report the held-out score of that node on the other 100 HumanEval+ instances and the other 145 Polyglot instances, next to the root scaffold and the calibration edit with the highest fit-split label. Twelve runs of GPT-4o return a node at 87.0% on held-out HumanEval+, against 84.2% for the parent-rate ablation. On that split Huxley-G\\\"odel Machine selection returns 85.1%, the root is at 81.2%, and the calibration-best edit is at 82.8%. On the same split Claude Sonnet 4.5 returns 86.6%, beside 86.5% for Huxley-G\\\"odel Machine selection, 85.3% for the parent-rate ablation, and 85.1% for the calibration-best edit."
+          ],
+          "citation_arxiv_id": [
+            "2610.29121"
+          ],
+          "citation_author": [
+            "Darzi, Erfan",
+            "Balija, Sree Bhargavi",
+            "He, Sheng"
+          ],
+          "citation_date": [
+            "2026/10/21"
+          ],
+          "citation_online_date": [
+            "2026/10/21"
+          ],
+          "citation_pdf_url": [
+            "https://arxiv.org/pdf/2610.29121"
+          ],
+          "citation_title": [
+            "Recursive Self-Improvement on a Budget: Scoring Code Edits Before They Run"
+          ]
+        },
+        "resolved_url": "https://arxiv.org/abs/2610.29121",
+        "sha256": "3b2820b4b88d1071c9088b343c18f639c25acee51dc3064971ec9778dc725318",
+        "url": "https://arxiv.org/abs/2610.29121"
+      },
+      {
+        "metadata": {},
+        "resolved_url": "https://arxiv.org/html/2610.29121",
+        "sha256": "14a763fba44f5f069135724cb3f2787504e702df40949cd5056430ec3aa5b756",
+        "url": "https://arxiv.org/html/2610.29121"
+      }
+    ]
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-11T22:17:35.863763+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}
