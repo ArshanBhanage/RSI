@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "query_id": "q01",
+      "result_sha256": "0103911bfc027c585d6c770fe30484a25e462cf0eae440d38e696be65825d218",
+      "rows": 24,
+      "seconds": 0.020020333118736744
+    },
+    {
+      "query_id": "q02",
+      "result_sha256": "bb1b00b6bb134b5d3c19725ed3cee2258ff3482af5c2134cfcd3da9e82c2efd1",
+      "rows": 261,
+      "seconds": 0.009028041968122125
+    },
+    {
+      "query_id": "q03",
+      "result_sha256": "53ed829ceac309a39a5e9375c39e3a7aa92e0c34b622b2fd64aa2781bb629a02",
+      "rows": 24,
+      "seconds": 0.06685291603207588
+    },
+    {
+      "query_id": "q04",
+      "result_sha256": "ff7ea4b4b52c1374fd61441fff044cdae7be7be3965d504cd26580a4944a9c2f",
+      "rows": 7,
+      "seconds": 0.01817425014451146
+    },
+    {
+      "query_id": "q05",
+      "result_sha256": "c70064de3ca9f5da9c50a2322d8d3818d59866d26a98ffaeb799b1fe6aeb583c",
+      "rows": 17974,
+      "seconds": 0.007810167036950588
+    },
+    {
+      "query_id": "q06",
+      "result_sha256": "980607869e95048d52b39afddb2e919f4f021adc1a310dfcc43982a7171561b8",
+      "rows": 33,
+      "seconds": 0.02324791718274355
+    }
+  ],
+  "data_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+  "scope": "reference queries execute; not optimization evidence",
+  "utc": "2026-11-11T22:11:11.665144+00:00",
+  "workload_sha256": "d0d1941b5aa2ae1f7c7ed4d3c7f0b7e72858c529567793cf4721c54aea47667f"
+}

@@ -1,0 +1,30 @@
+{
+  "development": {
+    "bytes": 59158238,
+    "path": "data/raw/yellow_tripdata_2025-01.parquet",
+    "publisher": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "retrieved_utc": "2026-11-11T22:10:39.342520+00:00",
+    "rows": 3475226,
+    "schema": "VendorID: int32\ntpep_pickup_datetime: timestamp[us]\ntpep_dropoff_datetime: timestamp[us]\npassenger_count: int64\ntrip_distance: double\nRatecodeID: int64\nstore_and_fwd_flag: large_string\nPULocationID: int32\nDOLocationID: int32\npayment_type: int64\nfare_amount: double\nextra: double\nmta_tax: double\ntip_amount: double\ntolls_amount: double\nimprovement_surcharge: double\ntotal_amount: double\ncongestion_surcharge: double\nAirport_fee: double\ncbd_congestion_fee: double",
+    "sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+    "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet"
+  },
+  "heldout": {
+    "bytes": 60343086,
+    "path": "data/raw/yellow_tripdata_2025-02.parquet",
+    "publisher": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "retrieved_utc": "2026-11-11T22:10:40.435934+00:00",
+    "rows": 3577543,
+    "schema": "VendorID: int32\ntpep_pickup_datetime: timestamp[us]\ntpep_dropoff_datetime: timestamp[us]\npassenger_count: int64\ntrip_distance: double\nRatecodeID: int64\nstore_and_fwd_flag: large_string\nPULocationID: int32\nDOLocationID: int32\npayment_type: int64\nfare_amount: double\nextra: double\nmta_tax: double\ntip_amount: double\ntolls_amount: double\nimprovement_surcharge: double\ntotal_amount: double\ncongestion_surcharge: double\nAirport_fee: double\ncbd_congestion_fee: double",
+    "sha256": "037cba555a73663f3a51a2c27816e40e3feb364769942bdf122b9da31e377bd3",
+    "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-02.parquet"
+  },
+  "zones": {
+    "bytes": 12331,
+    "path": "data/raw/taxi_zone_lookup.csv",
+    "publisher": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "retrieved_utc": "2026-11-11T22:10:40.778118+00:00",
+    "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+    "url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
+  }
+}

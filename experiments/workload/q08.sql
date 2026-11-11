@@ -1,0 +1,1 @@
+WITH daily AS (SELECT CAST(tpep_pickup_datetime AS DATE) AS day, COUNT(*) AS trips FROM trips GROUP BY 1) SELECT day, AVG(trips) OVER (ORDER BY day ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rolling FROM daily;

@@ -20,3 +20,19 @@ def doctor():
     print(json.dumps(report, indent=2))
     if not report["passed"]:
         raise typer.Exit(1)
+
+
+from . import dataset
+
+data_app = typer.Typer()
+app.add_typer(data_app, name="data")
+
+
+@data_app.command("fetch")
+def data_fetch(offline: bool = False):
+    print(json.dumps(dataset.fetch(offline), indent=2))
+
+
+@data_app.command("verify")
+def data_verify():
+    print(json.dumps(dataset.verify(), indent=2))

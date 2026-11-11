@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q01",
+    "partition": "development",
+    "question": "Pickup volume by hour",
+    "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) AS trips FROM trips GROUP BY 1"
+  },
+  {
+    "id": "q02",
+    "partition": "development",
+    "question": "Pickup zone demand",
+    "sql": "SELECT PULocationID AS zone, COUNT(*) AS trips FROM trips GROUP BY 1"
+  },
+  {
+    "id": "q03",
+    "partition": "development",
+    "question": "Distance median by pickup hour",
+    "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, MEDIAN(trip_distance) AS distance FROM trips WHERE trip_distance >= 0 GROUP BY 1"
+  },
+  {
+    "id": "q04",
+    "partition": "development",
+    "question": "Pickup day of week",
+    "sql": "SELECT EXTRACT(dow FROM tpep_pickup_datetime) AS weekday, COUNT(*) AS trips FROM trips GROUP BY 1"
+  },
+  {
+    "id": "q05",
+    "partition": "selection",
+    "question": "Routes during first seven calendar days",
+    "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7 GROUP BY 1, 2"
+  },
+  {
+    "id": "q06",
+    "partition": "selection",
+    "question": "Daily total revenue including adjustments",
+    "sql": "SELECT CAST(tpep_pickup_datetime AS DATE) AS day, SUM(total_amount) AS revenue FROM trips GROUP BY 1"
+  },
+  {
+    "id": "q07",
+    "partition": "heldout",
+    "question": "Borough pickups",
+    "sql": "SELECT z.Borough AS borough, COUNT(*) AS trips FROM trips t LEFT JOIN zones z ON t.PULocationID = z.LocationID GROUP BY 1"
+  },
+  {
+    "id": "q08",
+    "partition": "heldout",
+    "question": "Three observed-day rolling pickup volume",
+    "sql": "WITH daily AS (SELECT CAST(tpep_pickup_datetime AS DATE) AS day, COUNT(*) AS trips FROM trips GROUP BY 1) SELECT day, AVG(trips) OVER (ORDER BY day ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rolling FROM daily"
+  }
+]
