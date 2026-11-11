@@ -1,0 +1,19 @@
+{
+  "lab_id": "10.01",
+  "result": {
+    "actual_claim": {
+      "evaluation_id": "f0af854a0f4a4066b14497cb88df3712",
+      "speedup": 0.9911446774768818
+    },
+    "interpretation": "One measured SQL rewrite is not proof of recursive improver improvement.",
+    "negative_case_rejected": true,
+    "negative_contract_case": {
+      "evaluation_id": "nonexistent-test-id",
+      "speedup": 999
+    },
+    "supported": true
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-11T22:16:22.073175+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}

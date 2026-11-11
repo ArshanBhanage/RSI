@@ -47,3 +47,14 @@ app.add_typer(benchmark_app, name="benchmark")
 @benchmark_app.command("baseline")
 def benchmark_baseline():
     print(json.dumps(evaluator.baseline(), indent=2))
+
+
+from . import labs
+
+lab_app = typer.Typer()
+app.add_typer(lab_app, name="lab")
+
+
+@lab_app.command("run")
+def lab_run(lab_id: str):
+    print(json.dumps(labs.run(lab_id), indent=2))
