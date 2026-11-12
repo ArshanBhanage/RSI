@@ -1,0 +1,76 @@
+{
+  "lab_id": "10.04",
+  "result": {
+    "comparisons": [
+      {
+        "absolute_error": 0.0552283558885136,
+        "measured_speedup": 0.9975670723732777,
+        "prediction": 1.0527954282617913,
+        "query_id": "q03"
+      },
+      {
+        "absolute_error": 0.1503799557061331,
+        "measured_speedup": 0.6168030919429282,
+        "prediction": 0.46642313623679504,
+        "query_id": "q03"
+      },
+      {
+        "absolute_error": 0.1425877178215863,
+        "measured_speedup": 0.9834548083661566,
+        "prediction": 0.8408670905445703,
+        "query_id": "q04"
+      },
+      {
+        "absolute_error": 0.15909312987734375,
+        "measured_speedup": 0.28479083152494883,
+        "prediction": 0.4438839614022926,
+        "query_id": "q04"
+      }
+    ],
+    "interpretation": "Retrospective split analysis only. Four observations for nine features require regularization; this cannot establish prospective selection gains. Coefficients are frozen for the next lab.",
+    "mean_absolute_error": 0.1268222898233942,
+    "model": {
+      "ridge_lambda": 1.0,
+      "scale": [
+        1.0,
+        10.0,
+        3.0,
+        153.0,
+        1.0,
+        1.0,
+        3.0,
+        1.0,
+        1.0
+      ],
+      "target": "measured paired speedup; invalid=0",
+      "training_rows": 4,
+      "weights": [
+        0.10110043347537193,
+        0.2024087439653334,
+        0.10110043347537194,
+        0.08621234374197187,
+        0.0,
+        0.0,
+        0.013221150562980961,
+        0.0,
+        0.34573887047810103
+      ]
+    },
+    "training_evidence": "experiments/labs/10.03.json",
+    "training_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "validation_indices": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-12T19:19:18.957052+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}

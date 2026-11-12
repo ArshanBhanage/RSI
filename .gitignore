@@ -13,3 +13,5 @@ data/raw/
 .mypy_cache/
 *.egg-info/
 site/dist/
+
+.venv

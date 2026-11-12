@@ -110,3 +110,36 @@ def budget_demo() -> dict:
 
 
 RUNNERS["10.03"] = budget_demo
+
+
+def scoring_analysis() -> dict:
+    from .search import fit, predict
+
+    records = json.loads((ROOT / "experiments/labs/10.03.json").read_text())["result"]["records"]
+    training = records[:4]
+    validation = records[4:]
+    model = fit(training)
+    estimates = predict(model, validation)
+    comparisons = [
+        {
+            "query_id": row["query_id"],
+            "prediction": estimate,
+            "measured_speedup": row["speedup"],
+            "absolute_error": abs(estimate - row["speedup"]),
+        }
+        for row, estimate in zip(validation, estimates)
+    ]
+    assert all(math.isfinite(x["prediction"]) for x in comparisons)
+    save(ROOT / "experiments/manifests/budget-scorer.json", model)
+    return {
+        "model": model,
+        "training_evidence": "experiments/labs/10.03.json",
+        "training_indices": list(range(4)),
+        "validation_indices": list(range(4, 8)),
+        "comparisons": comparisons,
+        "mean_absolute_error": sum(x["absolute_error"] for x in comparisons) / len(comparisons),
+        "interpretation": "Retrospective split analysis only. Four observations for nine features require regularization; this cannot establish prospective selection gains. Coefficients are frozen for the next lab.",
+    }
+
+
+RUNNERS["10.04"] = scoring_analysis
