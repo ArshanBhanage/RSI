@@ -10,7 +10,7 @@ Order is mandatory. On November 11, 2026 the owner explicitly deferred videos un
 | M03 | CODE_VERIFIED | Frozen authority, real fixed Codex proposal, paired baseline timings, 12 contract tests and seven live isolation checks. See `experiments/manifests/M03-security.json`. |
 | L10.01 | CODE_VERIFIED | `experiments/labs/10.01.json`; video deferred. |
 | L10.02 | CODE_VERIFIED | `experiments/labs/10.02.json`; video deferred. |
-| L10.03 | NOT_STARTED | Prior milestone must pass. |
+| L10.03 | CODE_VERIFIED | `experiments/labs/10.03.json`; video deferred. |
 | L10.04 | NOT_STARTED | Prior milestone must pass. |
 | L10.05 | NOT_STARTED | Prior milestone must pass. |
 | L10.06 | NOT_STARTED | Prior milestone must pass. |

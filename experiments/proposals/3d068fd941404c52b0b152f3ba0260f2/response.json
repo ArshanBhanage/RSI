@@ -1,0 +1,44 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Projects the hour in a CTE before aggregation, preserving NULL hours and duplicate counts.",
+      "sql": "WITH pickups AS (SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour FROM trips) SELECT hour, COUNT(*) AS trips FROM pickups GROUP BY ALL"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Uses a partitioned window count and DISTINCT to return one row per hour, including NULL.",
+      "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips"
+    },
+    {
+      "query_id": "q02",
+      "reason": "Projects the zone in a CTE before aggregation, preserving all zone values, NULLs and duplicate counts.",
+      "sql": "WITH pickups AS (SELECT PULocationID AS zone FROM trips) SELECT zone, COUNT(*) AS trips FROM pickups GROUP BY ALL"
+    },
+    {
+      "query_id": "q02",
+      "reason": "Uses a partitioned window count and DISTINCT while retaining the original zone type.",
+      "sql": "SELECT DISTINCT PULocationID AS zone, COUNT(*) OVER (PARTITION BY PULocationID) AS trips FROM trips"
+    },
+    {
+      "query_id": "q03",
+      "reason": "Filters and projects in a CTE, retaining the original MEDIAN function, input type and nonnegative-distance predicate.",
+      "sql": "WITH eligible AS (SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, trip_distance FROM trips WHERE trip_distance >= 0) SELECT hour, MEDIAN(trip_distance) AS distance FROM eligible GROUP BY ALL"
+    },
+    {
+      "query_id": "q03",
+      "reason": "Uses windowed MEDIAN and DISTINCT, preserving eligible duplicates and the NULL-hour partition.",
+      "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, MEDIAN(trip_distance) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS distance FROM trips WHERE trip_distance >= 0"
+    },
+    {
+      "query_id": "q04",
+      "reason": "Projects weekday in a CTE before aggregation without filtering NULLs or anomalous dates.",
+      "sql": "WITH pickups AS (SELECT EXTRACT(dow FROM tpep_pickup_datetime) AS weekday FROM trips) SELECT weekday, COUNT(*) AS trips FROM pickups GROUP BY ALL"
+    },
+    {
+      "query_id": "q04",
+      "reason": "Uses a partitioned window count and DISTINCT, preserving weekday extraction types and all input rows.",
+      "sql": "SELECT DISTINCT EXTRACT(dow FROM tpep_pickup_datetime) AS weekday, COUNT(*) OVER (PARTITION BY EXTRACT(dow FROM tpep_pickup_datetime)) AS trips FROM trips"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+2026-11-11T22:17:38.500130Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-11T22:17:38.500933Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-11T22:17:39.182684Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: skipping remote installed plugin bundle download remote_plugin_id=plugin_connector_1p_1a69035c238881919c4190932b2df699 plugin=github marketplace=openai-curated-remote error=backend did not return a download URL for remote plugin `plugin_connector_1p_1a69035c238881919c4190932b2df699`
