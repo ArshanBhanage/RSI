@@ -326,3 +326,7 @@ RUNNERS["10.08"] = debugging_workflow
 from .scaling import comparison
 
 RUNNERS["10.09"] = comparison
+
+from .scaling import leader_followers
+
+RUNNERS["10.10"] = leader_followers

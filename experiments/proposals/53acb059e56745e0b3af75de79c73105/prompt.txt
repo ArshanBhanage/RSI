@@ -1,0 +1,1 @@
+Lead two SQL researchers. Assign complementary concrete orientations: one optimizes hourly COUNT grouping, the other first-week pickup/dropoff route COUNT grouping. Preserve exact semantics, NULLs, anomalous dates and types. Workers use fixed external validation. Do not claim results.

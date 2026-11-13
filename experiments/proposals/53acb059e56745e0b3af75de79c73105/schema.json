@@ -1,0 +1,16 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "hour_orientation": {
+      "type": "string"
+    },
+    "route_orientation": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "hour_orientation",
+    "route_orientation"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,4 @@
+{
+  "hour_orientation": "Research hourly COUNT grouping: target scan cost, repeated hour-expression evaluation, and aggregation strategy. Preserve the original COUNT variant, hour boundaries, timezone behavior, NULL groups, filters, anomalous dates, and type semantics. Use fixed external validation without changing its cases or expectations; report candidates, not claimed results.",
+  "route_orientation": "Research first-week pickup/dropoff route COUNT grouping: target predicate access, paired-route aggregation, and suitable indexes. Preserve the exact first-week predicate, endpoint order, COUNT variant, NULL groups, duplicate multiplicity, anomalous dates, and type semantics. Use fixed external validation without changing its cases or expectations; report candidates, not claimed results."
+}

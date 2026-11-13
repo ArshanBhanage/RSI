@@ -1,0 +1,9 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Materializes the hour projection before aggregation to explore repeated-expression evaluation while reading only the required trips column. Retains COUNT(*), aliases, DuckDB types, NULL groups, hour boundaries, timezone behavior, and anomalous dates. Proposed for fixed external validation; no results claimed.",
+      "sql": "WITH pickup_hours AS MATERIALIZED (\n  SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour\n  FROM trips\n)\nSELECT hour, COUNT(*) AS trips\nFROM pickup_hours\nGROUP BY hour"
+    }
+  ]
+}

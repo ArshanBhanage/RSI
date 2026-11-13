@@ -40,3 +40,79 @@ def comparison() -> dict:
         },
         "interpretation": "Source-grounded mechanism comparison and a small fresh evaluation of retrospective selection choices. This is not an AReaL/Swarm system-level benchmark; each arm evaluates two candidates, and prior calibration costs are shared and disclosed.",
     }
+
+
+def leader_followers() -> dict:
+    from concurrent.futures import ThreadPoolExecutor
+
+    from .proposals.codex_cli import propose
+    from .search import proposals
+
+    schema = {
+        "type": "object",
+        "properties": {
+            "hour_orientation": {"type": "string"},
+            "route_orientation": {"type": "string"},
+        },
+        "required": ["hour_orientation", "route_orientation"],
+        "additionalProperties": False,
+    }
+    leader = propose(
+        "Lead two SQL researchers. Assign complementary concrete orientations: one optimizes hourly COUNT grouping, the other first-week pickup/dropoff route COUNT grouping. Preserve exact semantics, NULLs, anomalous dates and types. Workers use fixed external validation. Do not claim results.",
+        schema,
+        "leader-orientations",
+    )
+    roles = [
+        ("q01", leader["response"]["hour_orientation"]),
+        ("q05", leader["response"]["route_orientation"]),
+    ]
+    memory: list[dict] = []
+    campaigns = []
+    for campaign in [0, 1]:
+        inputs = [
+            {
+                "query_id": qid,
+                "orientation": orientation,
+                "findings": [m for m in memory if m["query_id"] == qid and m["resolved"]],
+            }
+            for qid, orientation in roles
+        ]
+
+        def worker(task):
+            return proposals([task["query_id"]], 1, task["orientation"], task["findings"])
+
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(worker, inputs))
+        measured = evaluate(
+            [r["response"]["candidates"][0] for r in results],
+            "lab-10.10-leader-followers",
+            generation=campaign,
+        )
+        for index, row in enumerate(measured["records"]):
+            memory.append(
+                {
+                    "query_id": row["query_id"],
+                    "resolved": row["correct"],
+                    "claim_scope": "semantic correctness only; performance remains measured task-specific evidence",
+                    "sql": row["sql"],
+                    "speedup": row["speedup"],
+                    "evaluation_id": measured["id"],
+                    "record_index": index,
+                    "error": row.get("error"),
+                }
+            )
+        campaigns.append(
+            {
+                "campaign": campaign,
+                "worker_inputs": inputs,
+                "proposal_ids": [r["proposal_id"] for r in results],
+                "evaluation": measured,
+            }
+        )
+    return {
+        "leader_proposal_id": leader["proposal_id"],
+        "roles": roles,
+        "campaigns": campaigns,
+        "memory": memory,
+        "interpretation": "One real leader model call and two bounded real researcher calls per campaign. Only task-matching correctness-supported findings are shared in campaign two. CPU evaluations are serialized. This is a small coordination adaptation, not a reproduction of large persistent research teams.",
+    }
