@@ -334,3 +334,7 @@ RUNNERS["10.10"] = leader_followers
 from .scaling import swarm_evolution
 
 RUNNERS["10.11"] = swarm_evolution
+
+from .adaptation import workflow_comparison
+
+RUNNERS["10.12"] = workflow_comparison

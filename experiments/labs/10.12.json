@@ -1,0 +1,38 @@
+{
+  "lab_id": "10.12",
+  "result": {
+    "actual_evidence": {
+      "conditional_memory_campaign_ids": [
+        "4ddc09f837e74c559b7f9bad3fcd9cd1",
+        "a86f69671fca4c0390ac7ba35f5898a8"
+      ],
+      "inherited_workflow_hashes": [
+        "42364cca0839f66405b9b6f56ca6b4bd8106022ae92f4dbbb97f875d562b6786",
+        "42364cca0839f66405b9b6f56ca6b4bd8106022ae92f4dbbb97f875d562b6786"
+      ],
+      "workflow_generation_ids": [
+        "edd374ea869b46d58d7e3ef8e74a5704",
+        "34e99ca30c1f4fb7b46cf0bec3914a9a"
+      ],
+      "workflow_revision": "1b528f977dcd43f3aaae4f58fc8b7689"
+    },
+    "comparison": {
+      "RSIFlow": {
+        "changed_object": "Diagnosed task component and reusable skill memory; released executable Meta is fixed.",
+        "prefer_when": "A heterogeneous workflow has observable component bottlenecks and skills with measurable applicability.",
+        "risk": "A task-specific successful intervention can become an unsupported universal memory entry.",
+        "source": "https://arxiv.org/abs/2610.21791"
+      },
+      "Self-HPO": {
+        "changed_object": "Alternating H-step harness search and P-step reinforcement learning of policy weights.",
+        "prefer_when": "Training access and budget allow co-adapting weights and harness, with hard-task feedback between stages.",
+        "risk": "Changing both components confounds gains unless each is separately frozen and evaluated.",
+        "source": "https://arxiv.org/abs/2610.22791"
+      }
+    },
+    "interpretation": "Executable source/evidence audit of completed real trajectories. Existing flags and conditional memory illustrate routing and inheritance, not Self-HPO RL training or a faithful RSIFlow reproduction."
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-13T19:51:07.005737+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}
