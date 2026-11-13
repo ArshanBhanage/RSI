@@ -196,3 +196,43 @@ def prospective_selection() -> dict:
 
 
 RUNNERS["10.05"] = prospective_selection
+
+
+def diagnostic_demo() -> dict:
+    from .diagnostics import inspect, probes
+    from .evaluator import evaluate
+    from .search import proposals
+
+    transfer = json.loads((ROOT / "experiments/labs/10.05.json").read_text())["result"]
+    history: list[dict] = []
+    observations = []
+    for record, prediction in zip(transfer["records"], transfer["commitment"]["predictions"]):
+        observations.append(inspect(record, history, prediction))
+        history.append(record)
+    failed = transfer["records"][-1]
+    diagnostic = probes(failed)
+    naive = proposals(["q05"], 1, "Try a new rewrite. Previous candidate failed.")
+    informed = proposals(
+        ["q05"],
+        1,
+        "Use diagnostic inquiry before proposing: avoid the observed denied function and redundant aggregation. "
+        "A SQL rewrite does not change the evaluator's allowed language.",
+        [{"diagnostic": diagnostic, "anomalies": observations}],
+    )
+    actual = evaluate(
+        naive["response"]["candidates"] + informed["response"]["candidates"],
+        "lab-10.06-naive-vs-diagnostic",
+    )
+    return {
+        "source_evaluation": transfer["evaluation_id"],
+        "anomalies": observations,
+        "probe": diagnostic,
+        "arms": ["naive", "diagnostic"],
+        "proposal_ids": [naive["proposal_id"], informed["proposal_id"]],
+        "evaluation_id": actual["id"],
+        "records": actual["records"],
+        "interpretation": "One actual proposal and evaluator call per arm. Absence of recurrence or opposition is reported honestly. This diagnoses observed failures; no paper-level success-rate claim is made.",
+    }
+
+
+RUNNERS["10.06"] = diagnostic_demo

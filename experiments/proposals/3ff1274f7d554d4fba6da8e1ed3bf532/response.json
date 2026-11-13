@@ -1,0 +1,9 @@
+{
+  "candidates": [
+    {
+      "query_id": "q05",
+      "reason": "Diagnostic review identifies denied ROW_NUMBER usage; this rewrite uses no windows and only one aggregation. Integer day extraction makes < 8 equivalent to <= 7, preserving anomalous dates, NULL behavior, duplicate counts, aliases, and DuckDB result types.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) < 8 GROUP BY PULocationID, DOLocationID"
+    }
+  ]
+}
