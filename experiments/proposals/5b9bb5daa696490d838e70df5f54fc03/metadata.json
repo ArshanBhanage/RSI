@@ -1,0 +1,21 @@
+{
+  "cli_version": "codex-cli 0.167.0-alpha.3.2",
+  "cost_note": "Subscription execution; no per-request dollar invoice exposed",
+  "dollar_cost": null,
+  "id": "5b9bb5daa696490d838e70df5f54fc03",
+  "label": "bottleneck-meta",
+  "provider": "Codex CLI / ChatGPT auth",
+  "requested_model": "gpt-6.1-sol",
+  "returncode": 0,
+  "usage": [
+    {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 16110,
+      "output_tokens": 243,
+      "reasoning_output_tokens": 101
+    }
+  ],
+  "utc": "2026-11-13T19:52:20.852519+00:00",
+  "wall_seconds": 12.971833459101617
+}

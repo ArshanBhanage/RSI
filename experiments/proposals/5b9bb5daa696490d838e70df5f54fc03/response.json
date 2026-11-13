@@ -1,0 +1,5 @@
+{
+  "diagnosis": "Both correct rewrites slightly regressed (speedups 0.996\u00d7 and 0.991\u00d7); no bottleneck is proven. q01\u2019s projection adds no measured benefit. q05\u2019s date-part predicate is a candidate for filtering overhead or limited pruning.",
+  "route": "rewrite_predicate",
+  "skill": "If profiling shows q05\u2019s EXTRACT(day ...) filter dominates or prevents pruning, test equivalent half-open timestamp ranges for days 1\u20137 of each relevant month. Establish date coverage and preserve timezone and NULL semantics; do not substitute a single first-week range across multiple months. Accept only after correctness and repeated timing checks."
+}

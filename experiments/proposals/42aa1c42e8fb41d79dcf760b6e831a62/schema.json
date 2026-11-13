@@ -1,0 +1,25 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "diagnosis": {
+      "type": "string"
+    },
+    "route": {
+      "enum": [
+        "repair_contract",
+        "simplify_aggregation",
+        "rewrite_predicate"
+      ],
+      "type": "string"
+    },
+    "skill": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "route",
+    "diagnosis",
+    "skill"
+  ],
+  "type": "object"
+}

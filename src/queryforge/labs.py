@@ -338,3 +338,7 @@ RUNNERS["10.11"] = swarm_evolution
 from .adaptation import workflow_comparison
 
 RUNNERS["10.12"] = workflow_comparison
+
+from .adaptation import adaptive_meta
+
+RUNNERS["10.13"] = adaptive_meta
