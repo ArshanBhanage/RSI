@@ -330,3 +330,7 @@ RUNNERS["10.09"] = comparison
 from .scaling import leader_followers
 
 RUNNERS["10.10"] = leader_followers
+
+from .scaling import swarm_evolution
+
+RUNNERS["10.11"] = swarm_evolution

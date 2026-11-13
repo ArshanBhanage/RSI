@@ -116,3 +116,69 @@ def leader_followers() -> dict:
         "memory": memory,
         "interpretation": "One real leader model call and two bounded real researcher calls per campaign. Only task-matching correctness-supported findings are shared in campaign two. CPU evaluations are serialized. This is a small coordination adaptation, not a reproduction of large persistent research teams.",
     }
+
+
+def swarm_evolution() -> dict:
+    from concurrent.futures import ThreadPoolExecutor
+
+    from .search import proposals
+
+    orientations = [
+        "Explore early filtering before grouping.",
+        "Explore an exact staged aggregation with correct BIGINT output.",
+        "Explore a minimal CTE layout and justify its hypothesis.",
+        "Explore aggregation expression simplification.",
+        "Explore a different exact predicate representation without dropping anomalous dates.",
+    ]
+
+    def worker(instruction):
+        return proposals(["q05"], 1, instruction)
+
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        initial = list(pool.map(worker, orientations))
+    population = evaluate(
+        [p["response"]["candidates"][0] for p in initial], "lab-10.11-swarm-population"
+    )
+    ranked = sorted(
+        enumerate(population["records"]),
+        key=lambda pair: pair[1]["speedup"] if pair[1]["correct"] else 0,
+        reverse=True,
+    )
+    parents = ranked[:2]
+    feedback = [
+        {
+            "index": i,
+            "sql": r["sql"],
+            "correct": r["correct"],
+            "speedup": r["speedup"],
+            "error": r.get("error"),
+        }
+        for i, r in parents
+    ]
+    mutation = proposals(
+        ["q05"],
+        1,
+        "Mutate the first parent hypothesis and SQL based on its measured feedback. Describe the changed component.",
+        feedback[:1],
+    )
+    recombination = proposals(
+        ["q05"],
+        1,
+        "Recombine compatible predicate/aggregation components from both parents. State which component comes from which parent; if no useful complement exists, state that limitation instead of inventing it.",
+        feedback,
+    )
+    descendants = evaluate(
+        mutation["response"]["candidates"] + recombination["response"]["candidates"],
+        "lab-10.11-swarm-descendants",
+        generation=1,
+    )
+    return {
+        "orientations": orientations,
+        "initial_proposal_ids": [p["proposal_id"] for p in initial],
+        "population": population,
+        "selected_parents": feedback,
+        "descendant_proposal_ids": [mutation["proposal_id"], recombination["proposal_id"]],
+        "operators": ["feedback_guided_mutation", "component_recombination"],
+        "descendants": descendants,
+        "interpretation": "Five actual researcher subprocesses and two subsequent model-generated descendants, all externally evaluated. Parent evidence and component rationales are retained. SQL population evolution alone is not proof that the improver recursively improved.",
+    }

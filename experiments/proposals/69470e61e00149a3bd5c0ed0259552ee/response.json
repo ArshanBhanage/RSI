@@ -1,0 +1,9 @@
+{
+  "candidates": [
+    {
+      "query_id": "q05",
+      "reason": "Stages counts by route and day-of-month, then aggregates routes with an explicit BIGINT cast to preserve COUNT(*) output type and the original date filter.",
+      "sql": "WITH staged AS (\n  SELECT PULocationID AS pickup,\n         DOLocationID AS dropoff,\n         EXTRACT(day FROM tpep_pickup_datetime) AS pickup_day,\n         COUNT(*) AS partial_trips\n  FROM trips\n  WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7\n  GROUP BY 1, 2, 3\n)\nSELECT pickup,\n       dropoff,\n       CAST(SUM(partial_trips) AS BIGINT) AS trips\nFROM staged\nGROUP BY 1, 2"
+    }
+  ]
+}

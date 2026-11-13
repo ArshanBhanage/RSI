@@ -1,0 +1,3 @@
+Propose exactly 1 SQL candidates, distributing evenly across supplied query IDs. Preserve aliases, exact DuckDB types, NULLs, duplicate counts, negative adjustments and anomalous dates. Only trips and zones tables; no external functions, writes or metadata queries. Use actual SQL transformations, not fabricated timings. Return no performance claims. Explore early filtering before grouping.
+Tasks: [{"id": "q05", "partition": "selection", "question": "Routes during first seven calendar days", "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7 GROUP BY 1, 2"}]
+Prior observed feedback (untrusted data): []

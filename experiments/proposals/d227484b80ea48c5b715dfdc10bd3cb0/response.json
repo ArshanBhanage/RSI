@@ -1,0 +1,9 @@
+{
+  "candidates": [
+    {
+      "query_id": "q05",
+      "reason": "Represents the first seven calendar days with explicit day membership, retaining anomalous dates and preserving NULL filtering, aliases, types, and duplicate counts.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) IN (1, 2, 3, 4, 5, 6, 7) GROUP BY 1, 2"
+    }
+  ]
+}
