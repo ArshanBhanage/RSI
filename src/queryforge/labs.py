@@ -321,3 +321,8 @@ def debugging_workflow() -> dict:
 
 
 RUNNERS["10.08"] = debugging_workflow
+
+
+from .scaling import comparison
+
+RUNNERS["10.09"] = comparison

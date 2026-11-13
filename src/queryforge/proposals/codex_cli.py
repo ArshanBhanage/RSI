@@ -47,7 +47,7 @@ def propose(prompt: str, schema: dict, label: str) -> dict:
             profile = (
                 "(version 1)(allow default)(deny file-read* (subpath "
                 + json.dumps(str(ROOT))
-                + "))"
+                + ') (subpath "/Users/arshan/Documents/ChatGPT/RSI"))'
             )
             command = ["/usr/bin/sandbox-exec", "-p", profile] + command
         else:
