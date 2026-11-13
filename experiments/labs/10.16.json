@@ -1,0 +1,113 @@
+{
+  "lab_id": "10.16",
+  "result": {
+    "boundary_checks": {
+      "checks": [
+        {
+          "name": "semantic_mismatch",
+          "passed": true
+        },
+        {
+          "name": "external_file_denied",
+          "passed": true
+        },
+        {
+          "name": "heldout_query_denied",
+          "passed": true
+        },
+        {
+          "name": "query_interrupted",
+          "passed": true
+        },
+        {
+          "name": "nonroot",
+          "passed": true
+        },
+        {
+          "name": "readonly",
+          "passed": true
+        },
+        {
+          "name": "network_denied",
+          "passed": true
+        }
+      ],
+      "evaluation_id": "43b15f2f26424fe4b28244c510013c15",
+      "passed": true,
+      "utc": "2026-11-13T19:56:02.262422+00:00"
+    },
+    "environments": {
+      "R2Orch": {
+        "fit": "Training task selection and orchestration when repeated controlled rollouts are available.",
+        "limit": "A single task score does not establish recursive learnability or successful skill internalization.",
+        "mechanism": "Inner orchestration self-play and outer skill withdrawal/internalization guided by recursive learnability.",
+        "source": "https://arxiv.org/abs/2610.22740"
+      },
+      "RSIGym": {
+        "fit": "Experiments spanning data, model and harness interventions.",
+        "limit": "Service availability and budget accounting remain part of reproducibility.",
+        "mechanism": "Service-based training, inference, evaluation and sandboxes with shared budgets and permissions.",
+        "source": "https://arxiv.org/abs/2610.10310"
+      },
+      "Terminal-RSI": {
+        "fit": "Training terminal agents with verifier and partial-progress signals.",
+        "limit": "Not merely a terminal sandbox; requires model/critic training infrastructure not reproduced here.",
+        "mechanism": "Alternating verified trajectory rewriting and critic-inheriting policy refinement, with turn-aware advantage estimation.",
+        "source": "https://arxiv.org/abs/2610.22192"
+      }
+    },
+    "interpretation": "Actual SQL and Docker negative tests exercise this project\u2019s boundary. QueryForge is a local protected SQL environment, not any of these training platforms. Denied attack inputs are contract tests, not fabricated taxi data or optimization gains.",
+    "language_checks": {
+      "cpu_seconds": 0.671723,
+      "data_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+      "engine": "2.0.0",
+      "evaluator_sha256": "8bd0e22207ffa21e00a523f45270822c6638327ebdcceb1c1aad1a0b00e94426",
+      "final": false,
+      "generation": 0,
+      "id": "90858839e02c41ae96000254e87f152b",
+      "method": "security-adversarial-language",
+      "peak_rss_kb": 749432,
+      "records": [
+        {
+          "correct": false,
+          "error": "External or qualified table access denied",
+          "error_category": "ValueError",
+          "query_id": "q01",
+          "speedup": 0,
+          "sql": "SELECT * FROM read_parquet('../../etc/passwd')"
+        },
+        {
+          "correct": false,
+          "error": "Only one SELECT query is permitted",
+          "error_category": "ValueError",
+          "query_id": "q01",
+          "speedup": 0,
+          "sql": "COPY trips TO '/tmp/leak.csv'"
+        },
+        {
+          "correct": false,
+          "error": "Only one SELECT query is permitted",
+          "error_category": "ValueError",
+          "query_id": "q01",
+          "speedup": 0,
+          "sql": "INSTALL shellfs; LOAD shellfs; SELECT 1"
+        },
+        {
+          "correct": false,
+          "error": "Function denied: ANONYMOUS",
+          "error_category": "ValueError",
+          "query_id": "q01",
+          "speedup": 0,
+          "sql": "SELECT system('touch /tmp/queryforge-escape')"
+        }
+      ],
+      "run_id": null,
+      "seed": 17,
+      "utc": "2026-11-13T19:56:03.175388+00:00",
+      "wall_seconds": 0.833118500187993
+    }
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-13T19:56:03.176002+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}

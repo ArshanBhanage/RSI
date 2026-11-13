@@ -1,10 +1,16 @@
 """Execute negative SQL and actual container-boundary checks; never report as gains."""
 
+import argparse
 import json
 import subprocess
+from pathlib import Path
 
 from queryforge.evaluator import AUTHORITY, LOCK, evaluate
 from queryforge.provenance import ROOT, now, save
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--output", default=str(ROOT / "experiments/manifests/M03-security.json"))
+args = parser.parse_args()
 
 negative = [
     {"query_id": "q01", "sql": "SELECT 1 AS hour, 1 AS trips"},
@@ -69,7 +75,7 @@ command = [
 actual = json.loads(subprocess.check_output(command, text=True, timeout=30))
 checks += [{"name": k, "passed": v} for k, v in actual.items()]
 save(
-    ROOT / "experiments/manifests/M03-security.json",
+    Path(args.output),
     {
         "utc": now(),
         "checks": checks,
