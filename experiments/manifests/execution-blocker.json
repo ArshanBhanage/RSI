@@ -1,0 +1,13 @@
+{
+  "status": "RESOLVED",
+  "milestone": "L10.05",
+  "observed_at": "2026-11-12T19:27:26.211990+00:00",
+  "provider_error": "Your workspace is out of credits. Ask your workspace owner to refill in order to continue.",
+  "proposal_id": "000a02bb91de496fa8d2bb87579627bb",
+  "verified_labs": 5,
+  "verified_methods": 0,
+  "next_action": "Restore funded model access, then run queryforge lab run 10.05. Continue sequentially only after verification.",
+  "videos": "Owner will upload later; no publication claimed.",
+  "resolved_by_proposal": "ef2fadbaf7d748d7908511f70bb6737b",
+  "resolved_by_evaluation": "1b4ac181f03c40c19ed63dee34173ffb"
+}

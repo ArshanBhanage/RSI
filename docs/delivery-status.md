@@ -1,13 +1,11 @@
 # Delivery status
 
-M00 is IN_PROGRESS. Source integrity and local video verification pass. YouTube publication and milestone commit are pending. M01 and later work has not begun.
+M00–M03 and L10.01–L10.05 have verified code executions. The earlier provider credit failure is retained as evidence and resolved by the successful L10.05 retry. L10.06 is next; later gates have not passed.
 
-- Verified labs: 0/17
+- Verified lab code: 5/17
 - Verified principal methods: 0/3
-- Required lab/method videos recorded: 0/20
-- Required lab/method YouTube links verified: 0/20
-- Additional preliminary video: M00, 108 seconds, local decode and checksum verified
-- Website: not built or published
-- Repository: local checkout exists; no commit or push yet
+- Required videos recorded: 0/20
+- Verified YouTube links: 0/20
+- Website and GitHub publication: pending final gates
 
-Machine-readable source evidence: `experiments/manifests/M00-sources.json`, `M00-recorded-sources.json`, `M00-contract-checks.json`. Video evidence: `videos/M00-video.json` and `videos/M00-capture.json`.
+The owner deferred video work and will handle uploads. CODE_VERIFIED does not mean the full submission requirement has passed. See `milestones.md` and the authentic experiment reports for evidence.

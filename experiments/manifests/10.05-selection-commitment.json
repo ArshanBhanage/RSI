@@ -1,0 +1,15 @@
+{
+  "audit_protocol": "Evaluate all four after committing both choices; count every audit execution.",
+  "model_sha256": "79f114fa2de62b50df8831cd3b92b4b3c8618e316db37b8e4376b9e51ff7e72c",
+  "operational_budget_per_arm": 1,
+  "predictions": [
+    1.1680669326650968,
+    0.8221907274339595,
+    1.329465966278872,
+    0.6250580210929242
+  ],
+  "proposal_id": "ef2fadbaf7d748d7908511f70bb6737b",
+  "random_choice": 3,
+  "scorer_choice": 2,
+  "utc": "2026-11-13T19:40:21.738553+00:00"
+}

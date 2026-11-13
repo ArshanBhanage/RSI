@@ -48,6 +48,11 @@ RUNNERS = {"10.01": evidence_lab}
 def run(lab_id: str) -> dict:
     if lab_id not in RUNNERS:
         raise ValueError("Lesson is not implemented: " + lab_id)
+    report_path = ROOT / "experiments/labs" / f"{lab_id}.json"
+    if report_path.exists():
+        raise FileExistsError(
+            "Verified evidence already exists; use a separate experiment checkout to rerun"
+        )
     result = RUNNERS[lab_id]()
     report = {
         "lab_id": lab_id,
@@ -143,3 +148,51 @@ def scoring_analysis() -> dict:
 
 
 RUNNERS["10.04"] = scoring_analysis
+
+
+def prospective_selection() -> dict:
+    """Freeze choices before revealing any transfer-task runtime labels."""
+    import random
+
+    from .evaluator import evaluate
+    from .search import predict, proposals
+
+    commitment_path = ROOT / "experiments/manifests/10.05-selection-commitment.json"
+    if commitment_path.exists():
+        raise RuntimeError("Existing prospective commitment must not be overwritten")
+    model_path = ROOT / "experiments/manifests/budget-scorer.json"
+    proposed = proposals(
+        ["q05"],
+        4,
+        "Transfer evaluation: propose four distinct exact rewrites of the route aggregation. "
+        "Explore predicate placement and aggregation layout. No runtime labels are available.",
+    )
+    candidates = proposed["response"]["candidates"]
+    estimates = predict(json.loads(model_path.read_text()), candidates)
+    scored = max(range(4), key=lambda i: estimates[i])
+    random_choice = random.Random(17).randrange(4)
+    commitment = {
+        "utc": now(),
+        "model_sha256": digest(model_path),
+        "proposal_id": proposed["proposal_id"],
+        "predictions": estimates,
+        "scorer_choice": scored,
+        "random_choice": random_choice,
+        "operational_budget_per_arm": 1,
+        "audit_protocol": "Evaluate all four after committing both choices; count every audit execution.",
+    }
+    save(commitment_path, commitment)
+    measured = evaluate(candidates, "lab-10.05-prospective-transfer")
+    assert len(measured["records"]) == 4
+    return {
+        "commitment": commitment,
+        "evaluation_id": measured["id"],
+        "records": measured["records"],
+        "scorer_selected": measured["records"][scored],
+        "random_selected": measured["records"][random_choice],
+        "total_candidate_evaluations": 4,
+        "interpretation": "One prospective transfer task with equal one-candidate selection budgets. All four candidates were measured for audit; no evaluation-cost saving or statistical superiority is claimed.",
+    }
+
+
+RUNNERS["10.05"] = prospective_selection
