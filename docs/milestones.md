@@ -14,7 +14,7 @@ Order is mandatory. On November 11, 2026 the owner explicitly deferred videos un
 | L10.04 | CODE_VERIFIED | `experiments/labs/10.04.json`; video deferred. |
 | L10.05 | CODE_VERIFIED | `experiments/labs/10.05.json`; actual retry succeeded; video deferred. |
 | L10.06 | CODE_VERIFIED | `experiments/labs/10.06.json`; video deferred. |
-| L10.07 | NOT_STARTED | Prior milestone must pass. |
+| L10.07 | CODE_VERIFIED | `experiments/labs/10.07.json`; video deferred. |
 | L10.08 | NOT_STARTED | Prior milestone must pass. |
 | L10.09 | NOT_STARTED | Prior milestone must pass. |
 | L10.10 | NOT_STARTED | Prior milestone must pass. |

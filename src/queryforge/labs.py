@@ -236,3 +236,35 @@ def diagnostic_demo() -> dict:
 
 
 RUNNERS["10.06"] = diagnostic_demo
+
+
+def diagnostic_probes() -> dict:
+    from .diagnostics import probes
+    from .evaluator import evaluate
+
+    previous = json.loads((ROOT / "experiments/labs/10.06.json").read_text())["result"]
+    transfer = json.loads((ROOT / "experiments/labs/10.05.json").read_text())["result"]
+    repeat = evaluate(
+        [{"query_id": r["query_id"], "sql": r["sql"]} for r in previous["records"]],
+        "lab-10.07-repeat-probe",
+    )
+    counts = {
+        kind: sum(bool(row[kind]) for row in previous["anomalies"])
+        for kind in ["recurrence", "opposition", "mismatch", "regression"]
+    }
+    return {
+        "counts": counts,
+        "probes": [probes(row) for row in transfer["records"] + repeat["records"]],
+        "evaluation_id": repeat["id"],
+        "records": repeat["records"],
+        "recommendations": {
+            "recurrence": "No occurrence observed. If present, compare canonical SQL hashes before another evaluation.",
+            "opposition": "No occurrence observed. If present, inspect the last two same-task transformations for conflicting constraints.",
+            "mismatch": "ROW_NUMBER was rejected by the fixed language policy. Avoid that function; do not relax the evaluator. Predictions above one were not reliable guarantees.",
+            "regression": "Inspect actual aggregation operators and repeated timing dispersion before proposing an early-filter rewrite. Operator cost causality remains unproven.",
+        },
+        "interpretation": "Schema/contract, operator and timing probes use actual executed artifacts. The fresh repeat checks persistence of the measured contrast; absent anomaly types are not manufactured.",
+    }
+
+
+RUNNERS["10.07"] = diagnostic_probes
