@@ -1,0 +1,20 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "deduplicate": {
+      "type": "boolean"
+    },
+    "instruction": {
+      "type": "string"
+    },
+    "preflight": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "preflight",
+    "deduplicate",
+    "instruction"
+  ],
+  "type": "object"
+}

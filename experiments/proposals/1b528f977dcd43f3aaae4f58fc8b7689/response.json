@@ -1,0 +1,5 @@
+{
+  "deduplicate": true,
+  "instruction": "Explore exact SQL rewrites that preserve results and satisfy the public SQL language contract. Avoid ROW_NUMBER; do not relax the evaluator or change external scoring. Run preflight before expensive benchmarking and reject repeated canonical same-task SQL. Before proposing an early-filter rewrite, inspect actual aggregation operators and repeated timing dispersion; treat operator-cost causality as unproven. Treat predictions above one as estimates, not guarantees. If transformations conflict, inspect the last two same-task transformations for conflicting constraints before proceeding.",
+  "preflight": true
+}

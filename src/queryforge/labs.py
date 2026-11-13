@@ -268,3 +268,56 @@ def diagnostic_probes() -> dict:
 
 
 RUNNERS["10.07"] = diagnostic_probes
+
+
+def debugging_workflow() -> dict:
+    from .evaluator import evaluate
+    from .provenance import identity
+    from .search import proposals
+    from .workflow import INITIAL, prepare, revise
+
+    previous = json.loads((ROOT / "experiments/labs/10.07.json").read_text())["result"]
+    transfer = json.loads((ROOT / "experiments/labs/10.05.json").read_text())["result"]
+    revision = revise({"recommendations": previous["recommendations"]}, INITIAL)
+    policy = revision["response"]
+    save(ROOT / "experiments/manifests/10.08-workflow.json", policy)
+    control = prepare(transfer["records"], INITIAL)
+    replay = prepare(transfer["records"], policy)
+    runs = []
+    for generation in [1, 2]:
+        proposed = proposals(
+            ["q05"],
+            2,
+            policy["instruction"],
+            [{"prior_recommendations": previous["recommendations"]}],
+        )
+        filtered = prepare(proposed["response"]["candidates"], policy)
+        measured = (
+            evaluate(filtered["accepted"], "lab-10.08-inherited-workflow", generation=generation)
+            if filtered["accepted"]
+            else None
+        )
+        runs.append(
+            {
+                "generation": generation,
+                "workflow_sha256": identity(policy),
+                "proposal_id": proposed["proposal_id"],
+                "preflight": filtered,
+                "evaluation": measured,
+            }
+        )
+    assert identity(policy) != identity(INITIAL)
+    return {
+        "parent": INITIAL,
+        "descendant": policy,
+        "parent_sha256": identity(INITIAL),
+        "descendant_sha256": identity(policy),
+        "revision_proposal": revision["proposal_id"],
+        "control_replay": control,
+        "descendant_replay": replay,
+        "generations": runs,
+        "interpretation": "Model-generated workflow flags alter actual preflight/deduplication execution and are inherited by two fresh generations. Replay is a structural safety check, not a new runtime experiment. No performance promotion or general recursive gain is claimed.",
+    }
+
+
+RUNNERS["10.08"] = debugging_workflow

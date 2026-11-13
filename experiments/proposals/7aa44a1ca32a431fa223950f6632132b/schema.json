@@ -1,0 +1,35 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "candidates": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "query_id": {
+            "enum": [
+              "q05"
+            ],
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "sql": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_id",
+          "sql",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "candidates"
+  ],
+  "type": "object"
+}

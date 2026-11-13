@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "query_id": "q05",
+      "reason": "Projects route aliases before grouping while retaining the original filter placement and predicate. Preserves NULL route keys, duplicate counts, anomalous dates, and DuckDB COUNT(*) type.",
+      "sql": "SELECT pickup, dropoff, COUNT(*) AS trips FROM (SELECT PULocationID AS pickup, DOLocationID AS dropoff FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS selected GROUP BY pickup, dropoff"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Uses conditional aggregation and removes groups with no qualifying rows. Preserves the original date condition, NULL route keys, duplicate counts, and DuckDB COUNT(*) type without introducing an earlier filter.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY PULocationID, DOLocationID HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0"
+    }
+  ]
+}
