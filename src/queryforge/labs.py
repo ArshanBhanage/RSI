@@ -342,3 +342,7 @@ RUNNERS["10.12"] = workflow_comparison
 from .adaptation import adaptive_meta
 
 RUNNERS["10.13"] = adaptive_meta
+
+from .adaptation import alternating_search
+
+RUNNERS["10.14"] = alternating_search

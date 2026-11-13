@@ -1,0 +1,4 @@
+{
+  "rationale": "Use frozen_scorer to rank distinct SQL candidates that pass the fixed contract and equivalence checks; break ties by canonical SQL order. Keep scoring unchanged and use failures to propose new candidates. Neither observed rewrite demonstrates a speedup, and SQL length is not a reliable performance proxy.",
+  "selection": "frozen_scorer"
+}

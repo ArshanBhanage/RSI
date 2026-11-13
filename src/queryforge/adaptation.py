@@ -126,3 +126,71 @@ def adaptive_meta() -> dict:
         "memory": memory,
         "interpretation": "The executable controller is fixed. Real model diagnoses route interventions; skills enter supported memory only after both task speedups exceed 1.02 with correctness. Rejected skills remain visible and are not promoted. This small released-variant-inspired adaptation may show zero accepted skills.",
     }
+
+
+def alternating_search() -> dict:
+    from .evaluator import evaluate
+    from .proposals.codex_cli import propose
+    from .provenance import identity
+    from .search import predict, proposals
+    from .workflow import INITIAL, prepare, revise
+
+    prior = json.loads((ROOT / "experiments/labs/10.13.json").read_text())["result"]
+    harness = revise({"observed_skills": prior["memory"]}, INITIAL)
+    h_policy = harness["response"]
+    h_proposals = proposals(["q01", "q05"], 2, h_policy["instruction"])
+    prepared = prepare(h_proposals["response"]["candidates"], h_policy)
+    h_eval = evaluate(prepared["accepted"], "lab-10.14-h-step") if prepared["accepted"] else None
+    schema = {
+        "type": "object",
+        "properties": {
+            "selection": {"type": "string", "enum": ["shortest", "frozen_scorer", "longest"]},
+            "rationale": {"type": "string"},
+        },
+        "required": ["selection", "rationale"],
+        "additionalProperties": False,
+    }
+    policy = propose(
+        "Choose an executable candidate-selection policy while the harness remains fixed. This is discrete SQL search, not RL or model-weight training. "
+        + json.dumps({"harness": h_policy, "observations": h_eval["records"] if h_eval else []}),
+        schema,
+        "discrete-policy-step",
+    )
+    p_proposals = proposals(["q01", "q05"], 4, h_policy["instruction"])
+    eligible = prepare(p_proposals["response"]["candidates"], h_policy)
+    model = json.loads((ROOT / "experiments/manifests/budget-scorer.json").read_text())
+    rows = eligible["accepted"]
+    predictions = predict(model, rows)
+    selector = policy["response"]["selection"]
+    scores = (
+        predictions
+        if selector == "frozen_scorer"
+        else [len(r["sql"]) * (1 if selector == "longest" else -1) for r in rows]
+    )
+    selected = []
+    for qid in ["q01", "q05"]:
+        indexes = [i for i, r in enumerate(rows) if r["query_id"] == qid]
+        if indexes:
+            selected.append(rows[max(indexes, key=lambda i: scores[i])])
+    p_eval = evaluate(selected, "lab-10.14-p-step") if selected else None
+    return {
+        "h_step": {
+            "proposal_id": harness["proposal_id"],
+            "harness": h_policy,
+            "fixed_policy": "first valid candidate per task",
+            "candidate_proposal_id": h_proposals["proposal_id"],
+            "preflight": prepared,
+            "evaluation": h_eval,
+        },
+        "p_step": {
+            "proposal_id": policy["proposal_id"],
+            "policy": policy["response"],
+            "fixed_harness_sha256": identity(h_policy),
+            "candidate_proposal_id": p_proposals["proposal_id"],
+            "preflight": eligible,
+            "selection_scores": scores,
+            "selected": selected,
+            "evaluation": p_eval,
+        },
+        "interpretation": "Actual alternating harness revision and discrete search-policy selection. The original Self-HPO P-step trains model weights with RL; QueryForge does not. This pedagogical proxy isolates which component changes and makes no RL reproduction or accepted recursive-performance claim.",
+    }

@@ -1,0 +1,21 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "rationale": {
+      "type": "string"
+    },
+    "selection": {
+      "enum": [
+        "shortest",
+        "frozen_scorer",
+        "longest"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "selection",
+    "rationale"
+  ],
+  "type": "object"
+}
