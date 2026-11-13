@@ -346,3 +346,7 @@ RUNNERS["10.13"] = adaptive_meta
 from .adaptation import alternating_search
 
 RUNNERS["10.14"] = alternating_search
+
+from .metrics import index_lab
+
+RUNNERS["10.15"] = index_lab

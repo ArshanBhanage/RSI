@@ -1,0 +1,91 @@
+{
+  "lab_id": "10.15",
+  "result": {
+    "course_correction": "The course formula reverses the numerator; its worked example and the primary paper use final minus initial.",
+    "interpretation": "SQL utility normalization is our explicit latency adaptation, not the paper benchmark index or evidence of recursive gain. Latest observations are descriptive, not selected final systems. Negative values are preserved.",
+    "official_accuracy_index": null,
+    "paper_equation": "mean((final - initial)/(1 - initial))",
+    "rows": [
+      {
+        "baseline_sql_utility": 0.5,
+        "candidate_sql_utility": 0.4885596196862955,
+        "correct": true,
+        "correctness_gap_closed": null,
+        "evaluation_id": "f6f017f1f4054115aff55f6c5a3444fe",
+        "final_correctness": 1.0,
+        "initial_correctness": 1.0,
+        "query_id": "q01",
+        "speedup": 0.955262115569806,
+        "sql_utility_gap_closed": -0.022880760627408958
+      },
+      {
+        "baseline_sql_utility": 0.5,
+        "candidate_sql_utility": 0.5004159415721389,
+        "correct": true,
+        "correctness_gap_closed": null,
+        "evaluation_id": "e9450dcbb34d41599d3db52fe2b963f9",
+        "final_correctness": 1.0,
+        "initial_correctness": 1.0,
+        "query_id": "q02",
+        "speedup": 1.0016651515000212,
+        "sql_utility_gap_closed": 0.0008318831442777341
+      },
+      {
+        "baseline_sql_utility": 0.5,
+        "candidate_sql_utility": 0.3814954925659561,
+        "correct": true,
+        "correctness_gap_closed": null,
+        "evaluation_id": "c1aca1cf031243f2a018e2c0cb1bb470",
+        "final_correctness": 1.0,
+        "initial_correctness": 1.0,
+        "query_id": "q03",
+        "speedup": 0.6168030919429282,
+        "sql_utility_gap_closed": -0.2370090148680878
+      },
+      {
+        "baseline_sql_utility": 0.5,
+        "candidate_sql_utility": 0.22166318791902012,
+        "correct": true,
+        "correctness_gap_closed": null,
+        "evaluation_id": "c1aca1cf031243f2a018e2c0cb1bb470",
+        "final_correctness": 1.0,
+        "initial_correctness": 1.0,
+        "query_id": "q04",
+        "speedup": 0.28479083152494883,
+        "sql_utility_gap_closed": -0.5566736241619598
+      },
+      {
+        "baseline_sql_utility": 0.5,
+        "candidate_sql_utility": 0.1628271549085055,
+        "correct": true,
+        "correctness_gap_closed": null,
+        "evaluation_id": "f6f017f1f4054115aff55f6c5a3444fe",
+        "final_correctness": 1.0,
+        "initial_correctness": 1.0,
+        "query_id": "q05",
+        "speedup": 0.1944964601553818,
+        "sql_utility_gap_closed": -0.674345690182989
+      },
+      {
+        "baseline_sql_utility": 0.5,
+        "candidate_sql_utility": 0.4995237054249275,
+        "correct": true,
+        "correctness_gap_closed": null,
+        "evaluation_id": "281934368fc94b3d82cedfba0f706ee3",
+        "final_correctness": 1.0,
+        "initial_correctness": 1.0,
+        "query_id": "q06",
+        "speedup": 0.9980966348247248,
+        "sql_utility_gap_closed": -0.0009525891501449557
+      }
+    ],
+    "selection_rule": "Latest observed nonsecurity record for every observed development/selection task, not the best observed record.",
+    "source": "https://arxiv.org/html/2610.10310#S4.SS2",
+    "sql_utility_index": -0.24850496597438543,
+    "undefined_reason": "All protected reference tasks start at correctness one, so the remaining correctness gap is zero. A finite accuracy RSI-Index cannot be reported.",
+    "utility_definition": "correct ? speedup/(1+speedup) : 0; baseline utility=0.5, ceiling=1"
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-13T19:55:00.643720+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}
