@@ -1,0 +1,57 @@
+{
+  "lab_id": "10.17",
+  "result": {
+    "audited_labs": [
+      "10.01",
+      "10.02",
+      "10.03",
+      "10.04",
+      "10.05",
+      "10.06",
+      "10.07",
+      "10.08",
+      "10.09",
+      "10.10",
+      "10.11",
+      "10.12",
+      "10.13",
+      "10.14",
+      "10.15",
+      "10.16"
+    ],
+    "intentional_negative_references": [
+      "nonexistent-test-id"
+    ],
+    "interpretation": "Cross-artifact integrity audit over sixteen real reports. Metrics answer different questions; none alone demonstrates recursive self-improvement.",
+    "ledger_events": 20,
+    "metrics": {
+      "RSI-Index": {
+        "limit": "Undefined at a saturated initial score; inheritance and cost are separate.",
+        "problem": "Normalize fractions of remaining score gaps.",
+        "use": "Comparable reward benchmarks with a meaningful ceiling."
+      },
+      "recursive learnability": {
+        "limit": "Cannot be inferred from one static score.",
+        "problem": "Choose informative self-play tasks as skills change.",
+        "use": "Controlled orchestration rollouts with skill withdrawal."
+      },
+      "steering-split solve rate": {
+        "limit": "Proxy overfitting and multiplicity remain.",
+        "problem": "Select candidates without held-out labels.",
+        "use": "A representative predeclared proxy split."
+      },
+      "swarm diversity": {
+        "limit": "Diversity alone does not imply correctness or gain.",
+        "problem": "Track distinct hypotheses and components.",
+        "use": "Population search with externally tested descendants."
+      }
+    },
+    "missing_evaluations": [],
+    "missing_proposals": [],
+    "referenced_evaluations": 14,
+    "referenced_proposals": 13
+  },
+  "source_lock_sha256": "db4cf529babc05b5c67203e43360339ba3cc7678809c5388f9cf623eac808d28",
+  "utc": "2026-11-14T01:30:38.919773+00:00",
+  "video_status": "DEFERRED_BY_OWNER"
+}
