@@ -1,0 +1,807 @@
+{
+  "accepted_generations": 0,
+  "budget": {
+    "candidates_per_generation": 4,
+    "generations": 3,
+    "max_candidate_evaluations_per_method_seed": 12,
+    "max_model_calls_per_method_seed": 6,
+    "notes": "Equal SQL evaluation cap; meta calls and token use reported separately. Promotion uses development and selection; final transfer once per frozen run.",
+    "proposal_timeout_seconds": 180,
+    "protocol": "qf-v1",
+    "seeds": [
+      17,
+      29
+    ]
+  },
+  "fidelity": "Policy replay/rewrite adaptation; not the paper benchmark or exact replay fitness.",
+  "final_proposal_id": "ca80988d774e4ce4bf05a51716dac70d",
+  "frozen_state": {
+    "deduplicate": false,
+    "instruction": "Explore two structurally distinct exact SQL rewrites per task.",
+    "preflight": false,
+    "version": 0
+  },
+  "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+  "heldout_evaluation": {
+    "cpu_seconds": 1.4275559999999998,
+    "data_sha256": "037cba555a73663f3a51a2c27816e40e3feb364769942bdf122b9da31e377bd3",
+    "engine": "2.0.0",
+    "evaluator_sha256": "8bd0e22207ffa21e00a523f45270822c6638327ebdcceb1c1aad1a0b00e94426",
+    "final": true,
+    "generation": 3,
+    "id": "5e81ab93ac1b4da68679659513147787",
+    "method": "dream-rsi",
+    "peak_rss_kb": 764476,
+    "records": [
+      {
+        "baseline_median": 0.05741358399995988,
+        "candidate_median": 0.009398125000018354,
+        "correct": true,
+        "dispersion": {
+          "baseline": 0.0005947945422676109,
+          "candidate": 0.0005179978006338397
+        },
+        "first_query_seconds": {
+          "baseline": 0.06701387499998646,
+          "candidate": 0.01046045900000081
+        },
+        "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: borough, trips               \u2502\n\u2502 ~5 rows                                   \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections:                              \u2502\n\u2502 __internal_decompress_string(#0), #1      \u2502\n\u2502 ~5 rows                                   \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                                \u2502\n\u2502 Aggregates: sum(#1)                       \u2502\n\u2502 ~5 rows                                   \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: Borough, trips               \u2502\n\u2502 ~266 rows                                 \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections:                              \u2502\n\u2502 __internal_compress_string_uhugeint(#0),  \u2502\n\u2502 #1                                        \u2502\n\u2502 ~266 rows                                 \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: RIGHT                          \u2502\n\u2502 Conditions:                               \u2502\n\u2502 LocationID = CAST(PULocationID AS BIGINT) \u2502\n\u2502 ~266 rows                                 \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                      \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.zones                  \u2502  \u2502 Projections: CAST(#0 AS INTEGER), \u2502\n\u2502 Type: Sequential Scan                     \u2502  \u2502              #1                   \u2502\n\u2502 Projections: LocationID, Borough          \u2502  \u2502 ~266 rows                         \u2502\n\u2502 ~265 rows                                 \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u256d\u2500 Perfect Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                               \u2502 Groups: #0                        \u2502\n                                               \u2502 Aggregates: count_star()          \u2502\n                                               \u2502 ~266 rows                         \u2502\n                                               \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                               \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                               \u2502 Projections: PULocationID         \u2502\n                                               \u2502 ~3,577,543 rows                   \u2502\n                                               \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                               \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                               \u2502 Projections: CAST(#0 AS SMALLINT) \u2502\n                                               \u2502 ~3,577,543 rows                   \u2502\n                                               \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                               \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                               \u2502 Table: memory.main.trips          \u2502\n                                               \u2502 Type: Sequential Scan             \u2502\n                                               \u2502 Projections: PULocationID         \u2502\n                                               \u2502 ~3,577,543 rows                   \u2502\n                                               \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+        "query_id": "q07",
+        "result_sha256": "1d70e498040671d5b42c7c68eb6f9bad0bdd3e6ecef2fb336d61ca072b27cbb2",
+        "rows": 8,
+        "schema": [
+          [
+            "borough",
+            "VARCHAR"
+          ],
+          [
+            "trips",
+            "BIGINT"
+          ]
+        ],
+        "speedup": 6.109046644926276,
+        "sql": "WITH pickups AS (SELECT PULocationID, COUNT(*) AS trips FROM trips GROUP BY PULocationID) SELECT z.Borough AS borough, CAST(SUM(p.trips) AS BIGINT) AS trips FROM pickups p LEFT JOIN zones z ON p.PULocationID = z.LocationID GROUP BY z.Borough",
+        "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+        "warm_seconds": {
+          "baseline": [
+            0.057008875000008175,
+            0.057632167000008394,
+            0.05858474999996588,
+            0.056928166999966834,
+            0.05741358399995988
+          ],
+          "candidate": [
+            0.010262875000023541,
+            0.009398125000018354,
+            0.00925037499996506,
+            0.009116333999998005,
+            0.010328458999993018
+          ]
+        }
+      },
+      {
+        "correct": false,
+        "error": "Function denied: ROW_NUMBER",
+        "error_category": "ValueError",
+        "query_id": "q08",
+        "speedup": 0,
+        "sql": "WITH daily AS (SELECT CAST(tpep_pickup_datetime AS DATE) AS day, COUNT(*) AS trips FROM trips GROUP BY 1), numbered AS (SELECT day, trips, ROW_NUMBER() OVER (ORDER BY day ASC NULLS LAST) AS seq FROM daily) SELECT n.day AS day, AVG(p.trips) AS rolling FROM numbered n JOIN numbered p ON p.seq BETWEEN n.seq - 2 AND n.seq GROUP BY n.seq, n.day"
+      }
+    ],
+    "run_id": "35beefdb51ec484e9f912b62112ac71b",
+    "seed": 29,
+    "utc": "2026-11-14T01:37:18.676937+00:00",
+    "wall_seconds": 1.7346677081659436
+  },
+  "lineage": [
+    {
+      "candidate_state": {
+        "deduplicate": true,
+        "diagnosis": "All four recorded candidates were correct. The trace lacks SQL text, so structural diversity and duplication cannot be assessed.",
+        "instruction": "For each task in the fresh online generation, inspect the SQL, schema, and engine capabilities before proposing two structurally distinct exact rewrites. Preserve duplicates, NULL behavior, ordering, limits, types, and all other observable SQL semantics. Deduplicate structurally equivalent candidates and replace duplicates with a distinct rewrite. Submit candidates to the unchanged external evaluator; do not infer equivalence or performance from this offline trace.",
+        "preflight": true,
+        "version": 1
+      },
+      "evaluation": {
+        "cpu_seconds": 4.051855,
+        "data_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+        "engine": "2.0.0",
+        "evaluator_sha256": "8bd0e22207ffa21e00a523f45270822c6638327ebdcceb1c1aad1a0b00e94426",
+        "final": false,
+        "generation": 0,
+        "id": "88db4ca0374f400f826a67c61cd47182",
+        "method": "dream-rsi",
+        "peak_rss_kb": 983300,
+        "records": [
+          {
+            "baseline_median": 0.02608854199999655,
+            "candidate_median": 0.09844425000000001,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.011174648605336552,
+              "candidate": 0.008864242092007731
+            },
+            "first_query_seconds": {
+              "baseline": 0.02793195800001058,
+              "candidate": 0.10296712499999217
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: 0, trips               \u2502\n\u2502 ~1,098,380 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS BIGINT), #1 \u2502\n\u2502 ~1,098,380 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Perfect Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                          \u2502\n\u2502 Aggregates: sum(#1)                 \u2502\n\u2502 ~1,098,380 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(hour AS TINYINT), \u2502\n\u2502              n                      \u2502\n\u2502 ~2,196,761 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                          \u2502\n\u2502 Aggregates: count_star()            \u2502\n\u2502 ~2,196,761 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: tpep_pickup_datetime   \u2502\n\u2502 ~3,475,226 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips            \u2502\n\u2502 Type: Sequential Scan               \u2502\n\u2502 Projections: tpep_pickup_datetime   \u2502\n\u2502 ~3,475,226 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q01",
+            "result_sha256": "4143e30eea56371985784113a6ed390ddac603ee863d5015df65360eabd621f6",
+            "rows": 24,
+            "schema": [
+              [
+                "hour",
+                "BIGINT"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.26500828641588053,
+            "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(n) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS n FROM trips GROUP BY tpep_pickup_datetime) AS grouped GROUP BY 1",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.02608854199999655,
+                0.02702029200000311,
+                0.022842416999992565,
+                0.02241700000001856,
+                0.052170042000000194
+              ],
+              "candidate": [
+                0.09199620799998343,
+                0.09243916700000909,
+                0.09844425000000001,
+                0.11591000000001372,
+                0.10423404200000164
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.017942040999997744,
+            "candidate_median": 0.06058224999998174,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.011032091214523794,
+              "candidate": 0.0014938507994959674
+            },
+            "first_query_seconds": {
+              "baseline": 0.01810870799999975,
+              "candidate": 0.08547270900001536
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS BIGINT), #1                  \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1                                       \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                             \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS TINYINT), #1                 \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                             \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: INNER                                     \u2502\n\u2502 Conditions:                                          \u2502\n\u2502 \"hour\"(tpep_pickup_datetime) IS NOT DISTINCT FROM #0 \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                            \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips                             \u2502  \u2502 Projections: CAST(#0 AS BIGINT), #1           \u2502\n\u2502 Type: Sequential Scan                                \u2502  \u2502 ~1,737,613 rows                               \u2502\n\u2502 Projections: tpep_pickup_datetime                    \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2502 ~3,475,226 rows                                      \u2502  \u256d\u2500 Perfect Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u2502 Groups: #0                                    \u2502\n                                                          \u2502 Aggregates: count()                           \u2502\n                                                          \u2502 ~1,737,613 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                                          \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                                          \u2502 Projections:                                  \u2502\n                                                          \u2502 CAST(\"hour\"(tpep_pickup_datetime) AS TINYINT) \u2502\n                                                          \u2502 ~3,475,226 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                                          \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                                          \u2502 Table: memory.main.trips                      \u2502\n                                                          \u2502 Type: Sequential Scan                         \u2502\n                                                          \u2502 Projections: tpep_pickup_datetime             \u2502\n                                                          \u2502 ~3,475,226 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q01",
+            "result_sha256": "4143e30eea56371985784113a6ed390ddac603ee863d5015df65360eabd621f6",
+            "rows": 24,
+            "schema": [
+              [
+                "hour",
+                "BIGINT"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.2961600303719844,
+            "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.017870625000000473,
+                0.04613420900000165,
+                0.017942040999997744,
+                0.01759566699999482,
+                0.022042707999986533
+              ],
+              "candidate": [
+                0.05967499999999859,
+                0.06297466699999177,
+                0.06058224999998174,
+                0.060167917000001125,
+                0.0632805420000011
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.007329040999991321,
+            "candidate_median": 0.15355575099999896,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0004098153595534037,
+              "candidate": 0.004674084057970889
+            },
+            "first_query_seconds": {
+              "baseline": 0.007278791000004503,
+              "candidate": 0.16959608299998763
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: 0, 1, trips           \u2502\n\u2502 ~67,216 rows                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER),  \u2502\n\u2502              CAST(#1 AS INTEGER),  \u2502\n\u2502              #2                    \u2502\n\u2502 ~67,216 rows                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1                     \u2502\n\u2502 Aggregates: sum(#2)                \u2502\n\u2502 ~67,216 rows                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: pickup, dropoff, n    \u2502\n\u2502 ~695,039 rows                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT), \u2502\n\u2502              CAST(#1 AS SMALLINT), \u2502\n\u2502              #2                    \u2502\n\u2502 ~695,039 rows                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: #0, #1, #3            \u2502\n\u2502 ~695,039 rows                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Filter \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Expression:                        \u2502\n\u2502 \"day\"(tpep_pickup_datetime) <= 7   \u2502\n\u2502 ~695,039 rows                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER),  \u2502\n\u2502              CAST(#1 AS INTEGER),  \u2502\n\u2502              #2, #3                \u2502\n\u2502 ~3,475,198 rows                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1, #2                 \u2502\n\u2502 Aggregates: count_star()           \u2502\n\u2502 ~3,475,198 rows                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: PULocationID,         \u2502\n\u2502              DOLocationID,         \u2502\n\u2502              tpep_pickup_datetime  \u2502\n\u2502 ~3,475,226 rows                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT), \u2502\n\u2502              CAST(#1 AS SMALLINT), \u2502\n\u2502              #2                    \u2502\n\u2502 ~3,475,226 rows                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips           \u2502\n\u2502 Type: Sequential Scan              \u2502\n\u2502 Projections: PULocationID,         \u2502\n\u2502              DOLocationID,         \u2502\n\u2502              tpep_pickup_datetime  \u2502\n\u2502 ~3,475,226 rows                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q05",
+            "result_sha256": "47a2af88ac20b260846e9c618a73d7768ba6bfb263071791a30039dd32bce59b",
+            "rows": 17974,
+            "schema": [
+              [
+                "pickup",
+                "INTEGER"
+              ],
+              [
+                "dropoff",
+                "INTEGER"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.0477288603797807,
+            "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, CAST(SUM(n) AS BIGINT) AS trips FROM (SELECT PULocationID, DOLocationID, tpep_pickup_datetime, COUNT(*) AS n FROM trips GROUP BY PULocationID, DOLocationID, tpep_pickup_datetime) AS grouped WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7 GROUP BY 1, 2",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.007163124999976844,
+                0.007037916999991012,
+                0.007965167000008933,
+                0.007329040999991321,
+                0.008016875000009804
+              ],
+              "candidate": [
+                0.15355575099999896,
+                0.1605453749999981,
+                0.15400854199998548,
+                0.14892087499998752,
+                0.14712812499999472
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.00715224999999009,
+            "candidate_median": 0.018421041999999943,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0003154028090510401,
+              "candidate": 0.0010132215461041165
+            },
+            "first_query_seconds": {
+              "baseline": 0.0071590830000047845,
+              "candidate": 0.018623375000004216
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER),     \u2502\n\u2502              CAST(#1 AS INTEGER), #2  \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1, #2                    \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: pickup, dropoff, trips   \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT),    \u2502\n\u2502              CAST(#1 AS SMALLINT), #2 \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: INNER                      \u2502\n\u2502 Conditions:                           \u2502\n\u2502 PULocationID IS NOT DISTINCT FROM #0, \u2502\n\u2502 DOLocationID IS NOT DISTINCT FROM #1  \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips              \u2502  \u2502 Projections: CAST(#0 AS INTEGER),  \u2502\n\u2502 Type: Sequential Scan                 \u2502  \u2502              CAST(#1 AS INTEGER),  \u2502\n\u2502 Projections: PULocationID,            \u2502  \u2502              #2                    \u2502\n\u2502              DOLocationID             \u2502  \u2502 ~347,522 rows                      \u2502\n\u2502 Filters:                              \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2502 \"day\"(tpep_pickup_datetime) <= 7      \u2502  \u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 ~695,045 rows                         \u2502  \u2502 Groups: #0, #1                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u2502 Aggregates: count()                \u2502\n                                           \u2502 ~347,522 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Projections: PULocationID,         \u2502\n                                           \u2502              DOLocationID          \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Projections: CAST(#0 AS SMALLINT), \u2502\n                                           \u2502              CAST(#1 AS SMALLINT)  \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Table: memory.main.trips           \u2502\n                                           \u2502 Type: Sequential Scan              \u2502\n                                           \u2502 Projections: PULocationID,         \u2502\n                                           \u2502              DOLocationID          \u2502\n                                           \u2502 Filters:                           \u2502\n                                           \u2502 \"day\"(tpep_pickup_datetime) <= 7   \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q05",
+            "result_sha256": "47a2af88ac20b260846e9c618a73d7768ba6bfb263071791a30039dd32bce59b",
+            "rows": 17974,
+            "schema": [
+              [
+                "pickup",
+                "INTEGER"
+              ],
+              [
+                "dropoff",
+                "INTEGER"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.38826522408396397,
+            "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.007842457999998942,
+                0.007004832999996324,
+                0.006972833000020273,
+                0.007232166999983747,
+                0.00715224999999009
+              ],
+              "candidate": [
+                0.01800591700001064,
+                0.019012707999991107,
+                0.020849375000011605,
+                0.018421041999999943,
+                0.018356166000017993
+              ]
+            }
+          }
+        ],
+        "run_id": "35beefdb51ec484e9f912b62112ac71b",
+        "seed": 29,
+        "utc": "2026-11-14T01:35:53.152847+00:00",
+        "wall_seconds": 4.300465042237192
+      },
+      "generation": 0,
+      "proposal_id": "a8f795ab7d1745d183c714361680d2b0",
+      "revision_proposal_id": "60112a2d54b64a44a72bf062bf957836",
+      "score": {
+        "by_task": {
+          "q01": 0.2961600303719844,
+          "q05": 0.38826522408396397
+        },
+        "geomean": 0.33909975015781435
+      },
+      "state": {
+        "deduplicate": false,
+        "instruction": "Explore two structurally distinct exact SQL rewrites per task.",
+        "preflight": false,
+        "version": 0
+      },
+      "state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333"
+    },
+    {
+      "acceptance_rule": "correct best candidate speedup >= 1.02 on both q01 and q05",
+      "accepted": false,
+      "candidate_state": {
+        "deduplicate": true,
+        "diagnosis": "All supplied candidates passed correctness checks. The trace contains no SQL or structural identities, so rewrite diversity and duplication cannot be determined.",
+        "instruction": "For each task in the fresh online generation, explore two structurally distinct exact SQL rewrites. Deduplicate candidates by SQL structure while retaining semantically significant differences; replace duplicates with a distinct candidate. Preserve all original SQL semantics, including duplicates, NULL behavior, types, ordering, and limits. Keep the external evaluator unchanged and submit candidates to it for correctness and performance evaluation. Treat the supplied trace only as historical data.",
+        "preflight": false,
+        "version": 1
+      },
+      "evaluation": {
+        "cpu_seconds": 3.427449,
+        "data_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+        "engine": "2.0.0",
+        "evaluator_sha256": "8bd0e22207ffa21e00a523f45270822c6638327ebdcceb1c1aad1a0b00e94426",
+        "final": false,
+        "generation": 1,
+        "id": "8a63f93e80b0475a893270640239c50b",
+        "method": "dream-rsi",
+        "peak_rss_kb": 823176,
+        "records": [
+          {
+            "baseline_median": 0.021997333000001618,
+            "candidate_median": 0.06884837500001595,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0029481104522647928,
+              "candidate": 0.012527655667394784
+            },
+            "first_query_seconds": {
+              "baseline": 0.020084583000027578,
+              "candidate": 0.06397054199999275
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS BIGINT), #1                  \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1                                       \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                             \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS TINYINT), #1                 \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                             \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: INNER                                     \u2502\n\u2502 Conditions:                                          \u2502\n\u2502 \"hour\"(tpep_pickup_datetime) IS NOT DISTINCT FROM #0 \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                            \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips                             \u2502  \u2502 Projections: CAST(#0 AS BIGINT), #1           \u2502\n\u2502 Type: Sequential Scan                                \u2502  \u2502 ~1,737,613 rows                               \u2502\n\u2502 Projections: tpep_pickup_datetime                    \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2502 ~3,475,226 rows                                      \u2502  \u256d\u2500 Perfect Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u2502 Groups: #0                                    \u2502\n                                                          \u2502 Aggregates: count()                           \u2502\n                                                          \u2502 ~1,737,613 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                                          \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                                          \u2502 Projections:                                  \u2502\n                                                          \u2502 CAST(\"hour\"(tpep_pickup_datetime) AS TINYINT) \u2502\n                                                          \u2502 ~3,475,226 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                                          \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                                          \u2502 Table: memory.main.trips                      \u2502\n                                                          \u2502 Type: Sequential Scan                         \u2502\n                                                          \u2502 Projections: tpep_pickup_datetime             \u2502\n                                                          \u2502 ~3,475,226 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q01",
+            "result_sha256": "4143e30eea56371985784113a6ed390ddac603ee863d5015df65360eabd621f6",
+            "rows": 24,
+            "schema": [
+              [
+                "hour",
+                "BIGINT"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.31950402605720934,
+            "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.021399707999989914,
+                0.017742249999969317,
+                0.026995416999966437,
+                0.021997333000001618,
+                0.02218504200004645
+              ],
+              "candidate": [
+                0.06393916700000091,
+                0.08795591699998795,
+                0.06884837500001595,
+                0.06865549999997711,
+                0.09592179199995599
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.018515459000013834,
+            "candidate_median": 0.09111208400003079,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0015695152374228015,
+              "candidate": 0.00195471665273591
+            },
+            "first_query_seconds": {
+              "baseline": 0.022674958000038714,
+              "candidate": 0.1124688759999799
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: 0, trips               \u2502\n\u2502 ~1,098,380 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS BIGINT), #1 \u2502\n\u2502 ~1,098,380 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Perfect Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                          \u2502\n\u2502 Aggregates: sum(#1)                 \u2502\n\u2502 ~1,098,380 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(hour AS TINYINT), \u2502\n\u2502              timestamp_trips        \u2502\n\u2502 ~2,196,761 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                          \u2502\n\u2502 Aggregates: count_star()            \u2502\n\u2502 ~2,196,761 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: tpep_pickup_datetime   \u2502\n\u2502 ~3,475,226 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips            \u2502\n\u2502 Type: Sequential Scan               \u2502\n\u2502 Projections: tpep_pickup_datetime   \u2502\n\u2502 ~3,475,226 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q01",
+            "result_sha256": "4143e30eea56371985784113a6ed390ddac603ee863d5015df65360eabd621f6",
+            "rows": 24,
+            "schema": [
+              [
+                "hour",
+                "BIGINT"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.20321628248573018,
+            "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(timestamp_trips) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS timestamp_trips FROM trips GROUP BY tpep_pickup_datetime) AS timestamp_counts GROUP BY 1",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.018136416000004374,
+                0.02230379200000243,
+                0.01945954199999278,
+                0.018515459000013834,
+                0.018159667000020363
+              ],
+              "candidate": [
+                0.08675599999997985,
+                0.08952804099999412,
+                0.09235758299996633,
+                0.09111208400003079,
+                0.09134312500003716
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.007752874999994219,
+            "candidate_median": 0.018005249999987427,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0005407990479951595,
+              "candidate": 0.0018192688298327379
+            },
+            "first_query_seconds": {
+              "baseline": 0.0077228750000131186,
+              "candidate": 0.017562792000035188
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER),     \u2502\n\u2502              CAST(#1 AS INTEGER), #2  \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1, #2                    \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: pickup, dropoff, trips   \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT),    \u2502\n\u2502              CAST(#1 AS SMALLINT), #2 \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: INNER                      \u2502\n\u2502 Conditions:                           \u2502\n\u2502 PULocationID IS NOT DISTINCT FROM #0, \u2502\n\u2502 DOLocationID IS NOT DISTINCT FROM #1  \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips              \u2502  \u2502 Projections: CAST(#0 AS INTEGER),  \u2502\n\u2502 Type: Sequential Scan                 \u2502  \u2502              CAST(#1 AS INTEGER),  \u2502\n\u2502 Projections: PULocationID,            \u2502  \u2502              #2                    \u2502\n\u2502              DOLocationID             \u2502  \u2502 ~347,522 rows                      \u2502\n\u2502 Filters:                              \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2502 \"day\"(tpep_pickup_datetime) <= 7      \u2502  \u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 ~695,045 rows                         \u2502  \u2502 Groups: #0, #1                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u2502 Aggregates: count()                \u2502\n                                           \u2502 ~347,522 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Projections: PULocationID,         \u2502\n                                           \u2502              DOLocationID          \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Projections: CAST(#0 AS SMALLINT), \u2502\n                                           \u2502              CAST(#1 AS SMALLINT)  \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Table: memory.main.trips           \u2502\n                                           \u2502 Type: Sequential Scan              \u2502\n                                           \u2502 Projections: PULocationID,         \u2502\n                                           \u2502              DOLocationID          \u2502\n                                           \u2502 Filters:                           \u2502\n                                           \u2502 \"day\"(tpep_pickup_datetime) <= 7   \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q05",
+            "result_sha256": "47a2af88ac20b260846e9c618a73d7768ba6bfb263071791a30039dd32bce59b",
+            "rows": 17974,
+            "schema": [
+              [
+                "pickup",
+                "INTEGER"
+              ],
+              [
+                "dropoff",
+                "INTEGER"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.4305896891184312,
+            "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.007752874999994219,
+                0.008687375000022257,
+                0.007232041999998273,
+                0.007811791999984052,
+                0.0071908339999708915
+              ],
+              "candidate": [
+                0.022318916999950034,
+                0.020155041999998957,
+                0.01783100000000104,
+                0.018005249999987427,
+                0.017584583000029852
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.007039958000007118,
+            "candidate_median": 0.030799833999992643,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.00017167154515303958,
+              "candidate": 0.0021587508093128113
+            },
+            "first_query_seconds": {
+              "baseline": 0.007126083000002836,
+              "candidate": 0.03141054200000326
+            },
+            "plan": "\u256d\u2500 Filter \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Expression:                                                                        \u2502\n\u2502 count_star() FILTER (WHERE (\"day\"(tpep_pickup_datetime) <= CAST(7 AS BIGINT))) > 0 \u2502\n\u2502 ~13,443 rows                                                                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER), CAST(#1 AS INTEGER), #2                          \u2502\n\u2502 ~67,218 rows                                                                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1                                                                     \u2502\n\u2502 Aggregates:                                                                        \u2502\n\u2502 count_star() FILTER (WHERE #0) Filter: #0                                          \u2502\n\u2502 ~67,218 rows                                                                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections:                                                                       \u2502\n\u2502 pickup, dropoff, \"day\"(tpep_pickup_datetime) <= 7                                  \u2502\n\u2502 ~3,475,226 rows                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT), CAST(#1 AS SMALLINT), #2                        \u2502\n\u2502 ~3,475,226 rows                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips                                                           \u2502\n\u2502 Type: Sequential Scan                                                              \u2502\n\u2502 Projections: PULocationID, DOLocationID, tpep_pickup_datetime                      \u2502\n\u2502 ~3,475,226 rows                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q05",
+            "result_sha256": "47a2af88ac20b260846e9c618a73d7768ba6bfb263071791a30039dd32bce59b",
+            "rows": 17974,
+            "schema": [
+              [
+                "pickup",
+                "INTEGER"
+              ],
+              [
+                "dropoff",
+                "INTEGER"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.22857129684558689,
+            "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY 1, 2 HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.006980959000031817,
+                0.007039958000007118,
+                0.006704624999997577,
+                0.007210624999970605,
+                0.007120083000017985
+              ],
+              "candidate": [
+                0.030901417000052334,
+                0.030799833999992643,
+                0.030346166000015273,
+                0.03067904200003113,
+                0.036058207999985825
+              ]
+            }
+          }
+        ],
+        "run_id": "35beefdb51ec484e9f912b62112ac71b",
+        "seed": 29,
+        "utc": "2026-11-14T01:36:27.650522+00:00",
+        "wall_seconds": 3.674751332961023
+      },
+      "generation": 1,
+      "proposal_id": "50316a4f5dbe4d82a09faae6aa308aaa",
+      "revision_proposal_id": "8301f18f08db441da59251db2cfee3df",
+      "score": {
+        "by_task": {
+          "q01": 0.31950402605720934,
+          "q05": 0.4305896891184312
+        },
+        "geomean": 0.3709112282636654
+      },
+      "state": {
+        "deduplicate": true,
+        "diagnosis": "All four recorded candidates were correct. The trace lacks SQL text, so structural diversity and duplication cannot be assessed.",
+        "instruction": "For each task in the fresh online generation, inspect the SQL, schema, and engine capabilities before proposing two structurally distinct exact rewrites. Preserve duplicates, NULL behavior, ordering, limits, types, and all other observable SQL semantics. Deduplicate structurally equivalent candidates and replace duplicates with a distinct rewrite. Submit candidates to the unchanged external evaluator; do not infer equivalence or performance from this offline trace.",
+        "preflight": true,
+        "version": 1
+      },
+      "state_sha256": "7b60c7b0635ee89e441d5747d552de3eed8abbdaed658804e693056cb05937cc",
+      "tested_revision_proposal_id": "60112a2d54b64a44a72bf062bf957836"
+    },
+    {
+      "acceptance_rule": "correct best candidate speedup >= 1.02 on both q01 and q05",
+      "accepted": false,
+      "evaluation": {
+        "cpu_seconds": 3.608999,
+        "data_sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+        "engine": "2.0.0",
+        "evaluator_sha256": "8bd0e22207ffa21e00a523f45270822c6638327ebdcceb1c1aad1a0b00e94426",
+        "final": false,
+        "generation": 2,
+        "id": "991db5646d2946f0a4f19762a9061dd1",
+        "method": "dream-rsi",
+        "peak_rss_kb": 813100,
+        "records": [
+          {
+            "baseline_median": 0.0267783330000384,
+            "candidate_median": 0.07201233400002138,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.009613020729012696,
+              "candidate": 0.009409365091919416
+            },
+            "first_query_seconds": {
+              "baseline": 0.04940700000003062,
+              "candidate": 0.07828200000000152
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS BIGINT), #1                  \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1                                       \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                             \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS TINYINT), #1                 \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                             \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: INNER                                     \u2502\n\u2502 Conditions:                                          \u2502\n\u2502 \"hour\"(tpep_pickup_datetime) IS NOT DISTINCT FROM #0 \u2502\n\u2502 ~1,737,613 rows                                      \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                            \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips                             \u2502  \u2502 Projections: CAST(#0 AS BIGINT), #1           \u2502\n\u2502 Type: Sequential Scan                                \u2502  \u2502 ~1,737,613 rows                               \u2502\n\u2502 Projections: tpep_pickup_datetime                    \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2502 ~3,475,226 rows                                      \u2502  \u256d\u2500 Perfect Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u2502 Groups: #0                                    \u2502\n                                                          \u2502 Aggregates: count()                           \u2502\n                                                          \u2502 ~1,737,613 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                                          \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                                          \u2502 Projections:                                  \u2502\n                                                          \u2502 CAST(\"hour\"(tpep_pickup_datetime) AS TINYINT) \u2502\n                                                          \u2502 ~3,475,226 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                                          \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                                          \u2502 Table: memory.main.trips                      \u2502\n                                                          \u2502 Type: Sequential Scan                         \u2502\n                                                          \u2502 Projections: tpep_pickup_datetime             \u2502\n                                                          \u2502 ~3,475,226 rows                               \u2502\n                                                          \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q01",
+            "result_sha256": "4143e30eea56371985784113a6ed390ddac603ee863d5015df65360eabd621f6",
+            "rows": 24,
+            "schema": [
+              [
+                "hour",
+                "BIGINT"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.37185759039597927,
+            "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.04915091600003052,
+                0.0267783330000384,
+                0.03253433300000097,
+                0.02267237500001329,
+                0.024432375000003503
+              ],
+              "candidate": [
+                0.0923427089999791,
+                0.08837012500003993,
+                0.07201233400002138,
+                0.0712590410000189,
+                0.07074662499996975
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.01887645900001189,
+            "candidate_median": 0.09766516600001296,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0014674068567776788,
+              "candidate": 0.0032674367525619063
+            },
+            "first_query_seconds": {
+              "baseline": 0.02400433399998292,
+              "candidate": 0.12186595800000077
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: hour, trips                       \u2502\n\u2502 ~1,098,380 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS BIGINT), #1            \u2502\n\u2502 ~1,098,380 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Perfect Hash Group By \u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                                     \u2502\n\u2502 Aggregates: sum(#1)                            \u2502\n\u2502 ~1,098,380 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections:                                   \u2502\n\u2502 CAST(\"hour\"(tpep_pickup_datetime) AS TINYINT), \u2502\n\u2502 timestamp_trips                                \u2502\n\u2502 ~2,196,761 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0                                     \u2502\n\u2502 Aggregates: count_star()                       \u2502\n\u2502 ~2,196,761 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: tpep_pickup_datetime              \u2502\n\u2502 ~3,475,226 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips                       \u2502\n\u2502 Type: Sequential Scan                          \u2502\n\u2502 Projections: tpep_pickup_datetime              \u2502\n\u2502 ~3,475,226 rows                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q01",
+            "result_sha256": "4143e30eea56371985784113a6ed390ddac603ee863d5015df65360eabd621f6",
+            "rows": 24,
+            "schema": [
+              [
+                "hour",
+                "BIGINT"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.19327729397408067,
+            "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(timestamp_trips) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS timestamp_trips FROM trips GROUP BY tpep_pickup_datetime) AS timestamp_counts GROUP BY EXTRACT(hour FROM tpep_pickup_datetime)",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.018311583000013343,
+                0.022361084000010578,
+                0.01887645900001189,
+                0.019157250000034765,
+                0.018684917000030055
+              ],
+              "candidate": [
+                0.09460666699999365,
+                0.09334783399998514,
+                0.1013378750000129,
+                0.09766516600001296,
+                0.1011163750000037
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.007138042000008227,
+            "candidate_median": 0.03035779200001798,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0001504098133402643,
+              "candidate": 0.0016456648459710467
+            },
+            "first_query_seconds": {
+              "baseline": 0.007548708000001625,
+              "candidate": 0.031339583000033144
+            },
+            "plan": "\u256d\u2500 Filter \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Expression:                                                                        \u2502\n\u2502 count_star() FILTER (WHERE (\"day\"(tpep_pickup_datetime) <= CAST(7 AS BIGINT))) > 0 \u2502\n\u2502 ~13,443 rows                                                                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER), CAST(#1 AS INTEGER), #2                          \u2502\n\u2502 ~67,218 rows                                                                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1                                                                     \u2502\n\u2502 Aggregates:                                                                        \u2502\n\u2502 count_star() FILTER (WHERE #0) Filter: #0                                          \u2502\n\u2502 ~67,218 rows                                                                       \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections:                                                                       \u2502\n\u2502 PULocationID, DOLocationID, \"day\"(tpep_pickup_datetime) <= 7                       \u2502\n\u2502 ~3,475,226 rows                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT), CAST(#1 AS SMALLINT), #2                        \u2502\n\u2502 ~3,475,226 rows                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips                                                           \u2502\n\u2502 Type: Sequential Scan                                                              \u2502\n\u2502 Projections: PULocationID, DOLocationID, tpep_pickup_datetime                      \u2502\n\u2502 ~3,475,226 rows                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q05",
+            "result_sha256": "47a2af88ac20b260846e9c618a73d7768ba6bfb263071791a30039dd32bce59b",
+            "rows": 17974,
+            "schema": [
+              [
+                "pickup",
+                "INTEGER"
+              ],
+              [
+                "dropoff",
+                "INTEGER"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.23513047325721181,
+            "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY PULocationID, DOLocationID HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.007180333999997401,
+                0.007138042000008227,
+                0.007171834000018862,
+                0.006778499999995802,
+                0.007031792000020687
+              ],
+              "candidate": [
+                0.031129665999969802,
+                0.03035779200001798,
+                0.03015937500003929,
+                0.0343654590000142,
+                0.02988629200001469
+              ]
+            }
+          },
+          {
+            "baseline_median": 0.007320499999991625,
+            "candidate_median": 0.017836790999979257,
+            "correct": true,
+            "dispersion": {
+              "baseline": 0.0004720101858221484,
+              "candidate": 0.0004251534438213705
+            },
+            "first_query_seconds": {
+              "baseline": 0.007106958999997914,
+              "candidate": 0.01736204200000202
+            },
+            "plan": "\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS INTEGER),     \u2502\n\u2502              CAST(#1 AS INTEGER), #2  \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Group By \u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Groups: #0, #1, #2                    \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: pickup, dropoff, trips   \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Projections: CAST(#0 AS SMALLINT),    \u2502\n\u2502              CAST(#1 AS SMALLINT), #2 \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500 Hash Join \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Join Type: INNER                      \u2502\n\u2502 Conditions:                           \u2502\n\u2502 PULocationID IS NOT DISTINCT FROM #0, \u2502\n\u2502 DOLocationID IS NOT DISTINCT FROM #1  \u2502\n\u2502 ~454,029,000 rows                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e  \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Table: memory.main.trips              \u2502  \u2502 Projections: CAST(#0 AS INTEGER),  \u2502\n\u2502 Type: Sequential Scan                 \u2502  \u2502              CAST(#1 AS INTEGER),  \u2502\n\u2502 Projections: PULocationID,            \u2502  \u2502              #2                    \u2502\n\u2502              DOLocationID             \u2502  \u2502 ~347,522 rows                      \u2502\n\u2502 Filters:                              \u2502  \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u2502 \"day\"(tpep_pickup_datetime) <= 7      \u2502  \u256d\u2500 Hash Group By \u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 ~695,045 rows                         \u2502  \u2502 Groups: #0, #1                     \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f  \u2502 Aggregates: count()                \u2502\n                                           \u2502 ~347,522 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Projections: PULocationID,         \u2502\n                                           \u2502              DOLocationID          \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Projection \u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Projections: CAST(#0 AS SMALLINT), \u2502\n                                           \u2502              CAST(#1 AS SMALLINT)  \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                                           \u256d\u2500 Seq Scan \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                                           \u2502 Table: memory.main.trips           \u2502\n                                           \u2502 Type: Sequential Scan              \u2502\n                                           \u2502 Projections: PULocationID,         \u2502\n                                           \u2502              DOLocationID          \u2502\n                                           \u2502 Filters:                           \u2502\n                                           \u2502 \"day\"(tpep_pickup_datetime) <= 7   \u2502\n                                           \u2502 ~695,045 rows                      \u2502\n                                           \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n",
+            "query_id": "q05",
+            "result_sha256": "47a2af88ac20b260846e9c618a73d7768ba6bfb263071791a30039dd32bce59b",
+            "rows": 17974,
+            "schema": [
+              [
+                "pickup",
+                "INTEGER"
+              ],
+              [
+                "dropoff",
+                "INTEGER"
+              ],
+              [
+                "trips",
+                "BIGINT"
+              ]
+            ],
+            "speedup": 0.41041575247476625,
+            "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7",
+            "timing_caveat": "First query is not an OS cold-cache measurement; data already loaded.",
+            "warm_seconds": {
+              "baseline": [
+                0.007777833000034207,
+                0.006803250000018579,
+                0.007140499999991334,
+                0.007320499999991625,
+                0.008140334000017901
+              ],
+              "candidate": [
+                0.018630541999982597,
+                0.017879665999998906,
+                0.017482708000045477,
+                0.017836790999979257,
+                0.017451542000003428
+              ]
+            }
+          }
+        ],
+        "run_id": "35beefdb51ec484e9f912b62112ac71b",
+        "seed": 29,
+        "utc": "2026-11-14T01:36:59.549693+00:00",
+        "wall_seconds": 3.9430549582466483
+      },
+      "generation": 2,
+      "proposal_id": "a62f950691b3464d9dc7f92a210c8f7c",
+      "score": {
+        "by_task": {
+          "q01": 0.37185759039597927,
+          "q05": 0.41041575247476625
+        },
+        "geomean": 0.39066125067098634
+      },
+      "state": {
+        "deduplicate": true,
+        "diagnosis": "All supplied candidates passed correctness checks. The trace contains no SQL or structural identities, so rewrite diversity and duplication cannot be determined.",
+        "instruction": "For each task in the fresh online generation, explore two structurally distinct exact SQL rewrites. Deduplicate candidates by SQL structure while retaining semantically significant differences; replace duplicates with a distinct candidate. Preserve all original SQL semantics, including duplicates, NULL behavior, types, ordering, and limits. Keep the external evaluator unchanged and submit candidates to it for correctness and performance evaluation. Treat the supplied trace only as historical data.",
+        "preflight": false,
+        "version": 1
+      },
+      "state_sha256": "b756be5f6d9aa5defe623386a33f1bf60c58641bc6add50003bce557663f2294",
+      "tested_revision_proposal_id": "8301f18f08db441da59251db2cfee3df"
+    }
+  ],
+  "method": "dream-rsi",
+  "run_id": "35beefdb51ec484e9f912b62112ac71b",
+  "seed": 29,
+  "utc": "2026-11-14T01:37:18.678123+00:00"
+}

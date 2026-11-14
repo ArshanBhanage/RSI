@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All four recorded candidates were correct. The trace lacks SQL text, so structural diversity and duplication cannot be assessed.",
+  "instruction": "For each task in the fresh online generation, inspect the SQL, schema, and engine capabilities before proposing two structurally distinct exact rewrites. Preserve duplicates, NULL behavior, ordering, limits, types, and all other observable SQL semantics. Deduplicate structurally equivalent candidates and replace duplicates with a distinct rewrite. Submit candidates to the unchanged external evaluator; do not infer equivalence or performance from this offline trace.",
+  "preflight": true
+}

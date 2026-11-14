@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Preaggregates identical pickup timestamps, then combines counts by extracted hour. Preserves the NULL-hour group and returns trips as BIGINT.",
+      "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(timestamp_trips) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS timestamp_trips FROM trips GROUP BY tpep_pickup_datetime) AS timestamp_counts GROUP BY EXTRACT(hour FROM tpep_pickup_datetime)"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Uses window counting followed by duplicate elimination to return one row per hour, including NULL, with the original EXTRACT and COUNT types.",
+      "sql": "SELECT DISTINCT hour, COUNT(*) OVER (PARTITION BY hour) AS trips FROM (SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour FROM trips) AS pickup_hours"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Counts each route by calendar day, filters using the original day condition, and combines qualifying counts. Preserves NULL route keys and casts trips to BIGINT.",
+      "sql": "SELECT pickup, dropoff, CAST(SUM(day_trips) AS BIGINT) AS trips FROM (SELECT PULocationID AS pickup, DOLocationID AS dropoff, EXTRACT(day FROM tpep_pickup_datetime) AS pickup_day, COUNT(*) AS day_trips FROM trips GROUP BY PULocationID, DOLocationID, EXTRACT(day FROM tpep_pickup_datetime)) AS route_days WHERE pickup_day <= 7 GROUP BY pickup, dropoff"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Applies the original calendar-day filter, then uses window counting and duplicate elimination to produce one row per route while preserving NULL keys and BIGINT counts.",
+      "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7"
+    }
+  ]
+}

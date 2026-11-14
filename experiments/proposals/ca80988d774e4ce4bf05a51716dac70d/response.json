@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "query_id": "q07",
+      "reason": "Preaggregate pickups by location, then join and sum with an explicit BIGINT cast. Preserves duplicate zone matches and the NULL borough group.",
+      "sql": "WITH pickups AS (SELECT PULocationID, COUNT(*) AS trips FROM trips GROUP BY PULocationID) SELECT z.Borough AS borough, CAST(SUM(p.trips) AS BIGINT) AS trips FROM pickups p LEFT JOIN zones z ON p.PULocationID = z.LocationID GROUP BY z.Borough"
+    },
+    {
+      "query_id": "q08",
+      "reason": "Replace the rolling window with an observed-day ordinal range join and grouped AVG. Preserves DATE and DOUBLE output types, NULL dates, anomalous dates, and partial initial frames.",
+      "sql": "WITH daily AS (SELECT CAST(tpep_pickup_datetime AS DATE) AS day, COUNT(*) AS trips FROM trips GROUP BY 1), numbered AS (SELECT day, trips, ROW_NUMBER() OVER (ORDER BY day ASC NULLS LAST) AS seq FROM daily) SELECT n.day AS day, AVG(p.trips) AS rolling FROM numbered n JOIN numbered p ON p.seq BETWEEN n.seq - 2 AND n.seq GROUP BY n.seq, n.day"
+    }
+  ]
+}

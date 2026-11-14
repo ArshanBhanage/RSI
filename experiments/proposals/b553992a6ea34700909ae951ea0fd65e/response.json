@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "The supplied tree contains four correct outcomes across q01 and q05, but no SQL or plans to identify which rewrite structures were explored.",
+  "instruction": "For each task in the fresh online generation, inspect the original SQL, dialect, schema, and available plans before generating two structurally distinct exact rewrites. Preserve duplicate multiplicities, NULL behavior, types, aggregation, ordering, ties, limits, and correlated-subquery semantics. Choose candidates using explicit query-specific hypotheses; do not infer preferred rewrite families from the supplied outcomes. Deduplicate equivalent rewrite structures within each task and replace duplicates with distinct candidates. Submit candidates to the unchanged external evaluator; do not alter its correctness checks, measurements, or selection rules.",
+  "preflight": true
+}

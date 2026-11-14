@@ -58,3 +58,19 @@ app.add_typer(lab_app, name="lab")
 @lab_app.command("run")
 def lab_run(lab_id: str):
     print(json.dumps(labs.run(lab_id), indent=2))
+
+
+from . import methods
+
+method_app = typer.Typer()
+app.add_typer(method_app, name="method")
+
+
+@method_app.command("run")
+def method_run(method: str):
+    print(json.dumps(methods.run_all(method), indent=2))
+
+
+@app.command("compare")
+def compare(verify: bool = False):
+    print(json.dumps(methods.compare(verify), indent=2))

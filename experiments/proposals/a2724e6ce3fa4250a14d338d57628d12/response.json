@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "query_id": "q07",
+      "reason": "Preaggregate pickups before the LEFT JOIN, retaining duplicate zone matches and NULL borough groups. Cast the weighted total to BIGINT to preserve COUNT(*)'s DuckDB type.",
+      "sql": "WITH pickups AS (SELECT PULocationID, COUNT(*) AS n FROM trips GROUP BY PULocationID) SELECT z.Borough AS borough, CAST(SUM(p.n) AS BIGINT) AS trips FROM pickups p LEFT JOIN zones z ON p.PULocationID = z.LocationID GROUP BY z.Borough"
+    },
+    {
+      "query_id": "q08",
+      "reason": "Replace the rolling AVG window with an observed-day ordinal self-join and grouped AVG, preserving DATE and DOUBLE output types, anomalous dates, and the NULL-date group.",
+      "sql": "WITH daily AS (SELECT CAST(tpep_pickup_datetime AS DATE) AS day, COUNT(*) AS trips FROM trips GROUP BY 1), numbered AS (SELECT day, trips, ROW_NUMBER() OVER (ORDER BY day) AS rn FROM daily) SELECT d.day AS day, AVG(p.trips) AS rolling FROM numbered d JOIN numbered p ON p.rn BETWEEN d.rn - 2 AND d.rn GROUP BY d.rn, d.day"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All four recorded candidates passed correctness checks. The trace contains no SQL text, so structural diversity and duplication cannot be determined.",
+  "instruction": "For each task, generate two structurally distinct exact SQL rewrites. Deduplicate candidates using structural fingerprints that preserve SQL semantics; replace duplicates with a different rewrite. Preserve result multiplicity, NULL behavior, types, ordering, and limit semantics. Keep the external evaluator unchanged and submit candidates to it without assuming correctness or performance from this offline replay.",
+  "preflight": false
+}

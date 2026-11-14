@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All supplied candidates passed correctness checks. The trace contains no SQL or structural identities, so rewrite diversity and duplication cannot be determined.",
+  "instruction": "For each task in the fresh online generation, explore two structurally distinct exact SQL rewrites. Deduplicate candidates by SQL structure while retaining semantically significant differences; replace duplicates with a distinct candidate. Preserve all original SQL semantics, including duplicates, NULL behavior, types, ordering, and limits. Keep the external evaluator unchanged and submit candidates to it for correctness and performance evaluation. Treat the supplied trace only as historical data.",
+  "preflight": false
+}

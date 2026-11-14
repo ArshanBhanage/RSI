@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All eight recorded candidates passed correctness checks with no reported errors. The trace contains no SQL or plans, so structural diversity and rewrite-specific causes cannot be established.",
+  "instruction": "For each fresh task, inspect the original SQL and available schema, then generate two structurally distinct exact rewrites. Preflight each candidate for syntax, schema compatibility, and preservation of duplicates, NULL behavior, types, aggregation, ordering, and limits. Deduplicate repeated candidates and generate replacements to maintain two distinct alternatives; if this is not possible, return fewer rather than relax semantics. Keep the original SQL as a fallback. Submit candidates to the unchanged external evaluator; do not replace its correctness checks or evaluation protocol. Use these traces only as historical data, and make no performance claims.",
+  "preflight": true
+}
