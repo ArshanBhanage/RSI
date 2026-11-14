@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All observed candidates passed correctness checks; the trace does not establish structural diversity or duplication.",
+  "instruction": "Inherit the accepted descendant as the next parent. Generate two structurally distinct exact SQL rewrites per task. Preflight candidates for syntax, schema compatibility, and preservation of duplicates, NULL behavior, types, ordering, limits, and other SQL semantics. Deduplicate identical candidates within each task without normalizing away semantic differences; regenerate duplicates to retain two distinct candidates. Submit candidates to the unchanged external evaluator and keep external selection fixed. Record candidate lineage, rewrite rationale, correctness results, and evaluator outputs without performance claims.",
+  "preflight": true
+}

@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "The trace reports correctness for all four evaluations but does not establish whether candidates were structurally distinct.",
+  "instruction": "Inherit the accepted descendant as the next parent. For each task, generate two structurally distinct exact SQL rewrites. Preflight each candidate for dialect validity and preservation of duplicates, NULL behavior, types, ordering guarantees, and all other SQL semantics. Deduplicate identical candidates within each task and replace duplicates to retain two distinct candidates. Submit candidates to the unchanged external evaluator; keep external selection fixed.",
+  "preflight": true
+}

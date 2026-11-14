@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Lineage: supplied q01 parent; accepted descendant SQL was not supplied. Static preflight: timestamp-level counts preserve duplicates and NULL timestamps; hourly totals are cast to BIGINT to match COUNT(*). No ordering is required. External evaluation was not run under the no-tools constraint; no selection was made.",
+      "sql": "WITH timestamp_counts AS (\n  SELECT tpep_pickup_datetime, COUNT(*) AS n\n  FROM trips\n  GROUP BY tpep_pickup_datetime\n)\nSELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour,\n       CAST(SUM(n) AS BIGINT) AS trips\nFROM timestamp_counts\nGROUP BY 1"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Lineage: supplied q01 parent; accepted descendant SQL was not supplied. Static preflight: window counts include every duplicate and partition NULL hours together; DISTINCT produces one row per hour. EXTRACT and COUNT retain the original types. No ordering is required. External evaluation was not run under the no-tools constraint; no selection was made.",
+      "sql": "SELECT DISTINCT\n       EXTRACT(hour FROM tpep_pickup_datetime) AS hour,\n       COUNT(*) OVER (\n         PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)\n       ) AS trips\nFROM trips"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Lineage: supplied q05 parent; accepted descendant SQL was not supplied. Static preflight: filtered aggregation retains the exact calendar-day predicate and duplicate counts; HAVING removes groups with no qualifying rows, including groups containing only NULL dates. Route types and BIGINT counts are preserved. No ordering is required. External evaluation was not run under the no-tools constraint; no selection was made.",
+      "sql": "SELECT PULocationID AS pickup,\n       DOLocationID AS dropoff,\n       COUNT(*) FILTER (\n         WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7\n       ) AS trips\nFROM trips\nGROUP BY 1, 2\nHAVING COUNT(*) FILTER (\n  WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7\n) > 0"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Lineage: supplied q05 parent; accepted descendant SQL was not supplied. Static preflight: the unchanged predicate preserves calendar-day and anomalous-date semantics; window counts preserve duplicates and NULL route groups, then DISTINCT returns one row per route. Route types and BIGINT counts are preserved. No ordering is required. External evaluation was not run under the no-tools constraint; no selection was made.",
+      "sql": "SELECT DISTINCT\n       PULocationID AS pickup,\n       DOLocationID AS dropoff,\n       COUNT(*) OVER (\n         PARTITION BY PULocationID, DOLocationID\n       ) AS trips\nFROM trips\nWHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7"
+    }
+  ]
+}

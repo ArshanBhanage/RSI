@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All supplied evaluations report correctness without errors; the trace does not identify rewrite structures or duplicate candidates.",
+  "instruction": "Inherit the accepted descendant as the next parent. For each task, explore two structurally distinct exact SQL rewrites. Preflight candidates for validity and semantic equivalence, preserving duplicates, NULL behavior, types, ordering requirements, and dialect semantics. Deduplicate identical candidate SQL within each task before submission; replace duplicates with distinct rewrites. Submit candidates to the unchanged external evaluator and retain the fixed external selection procedure. Record candidate SQL, lineage, preflight results, and evaluator outputs.",
+  "preflight": true
+}

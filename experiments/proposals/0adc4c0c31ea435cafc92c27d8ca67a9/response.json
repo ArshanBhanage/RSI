@@ -1,0 +1,6 @@
+{
+  "deduplicate": true,
+  "diagnosis": "All supplied results are correct; absent SQL and candidate identifiers, structural diversity and duplication cannot be assessed.",
+  "instruction": "Explore two structurally distinct exact SQL rewrites per task. Preflight each candidate for dialect validity and preservation of NULL, duplicate, ordering, tie, and type semantics. Deduplicate identical candidate SQL using conservative fingerprints that preserve literals and identifiers; replace duplicates to retain two distinct candidates. Record candidate identifiers, SQL, rewrite rationale, and preflight outcomes. Submit candidates to the unchanged external evaluator and selection process. Inherit the accepted descendant as the next parent.",
+  "preflight": true
+}

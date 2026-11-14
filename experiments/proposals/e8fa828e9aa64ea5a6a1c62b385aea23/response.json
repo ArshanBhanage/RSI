@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Lineage: supplied q01 \u2192 projected-key aggregation; no accepted descendant SQL was supplied. Static preflight: preserves EXTRACT's type, BIGINT counts, NULL-hour grouping, and duplicate contributions; no ordering or limit added. Runtime correctness and evaluator outputs unavailable because tools are prohibited; external selection unchanged.",
+      "sql": "WITH hourly AS (SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour FROM trips) SELECT hour AS hour, COUNT(*) AS trips FROM hourly GROUP BY hour"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Lineage: supplied q01 \u2192 window counting with DISTINCT; no accepted descendant SQL was supplied. Structurally distinct from aggregation. Static preflight: window partitions preserve NULL-hour grouping and count every duplicate before DISTINCT; output aliases and types are preserved, with no ordering or limit added. Runtime correctness and evaluator outputs unavailable because tools are prohibited; external selection unchanged.",
+      "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Lineage: supplied q05 \u2192 filtered projection followed by aggregation; no accepted descendant SQL was supplied. Static preflight: retains the exact day predicate, including anomalous-date and NULL behavior, route types, NULL groups, duplicate contributions, and BIGINT counts; no ordering or limit added. Runtime correctness and evaluator outputs unavailable because tools are prohibited; external selection unchanged.",
+      "sql": "WITH routes AS (SELECT PULocationID AS pickup, DOLocationID AS dropoff FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) SELECT pickup AS pickup, dropoff AS dropoff, COUNT(*) AS trips FROM routes GROUP BY pickup, dropoff"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Lineage: supplied q05 \u2192 filtered window counting with DISTINCT; no accepted descendant SQL was supplied. Structurally distinct from aggregation. Static preflight: the unchanged predicate executes before window counting; NULL route partitions and duplicate contributions match grouping, with original aliases and types preserved and no ordering or limit added. Runtime correctness and evaluator outputs unavailable because tools are prohibited; external selection unchanged.",
+      "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7"
+    }
+  ]
+}
