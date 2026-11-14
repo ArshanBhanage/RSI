@@ -1,0 +1,6 @@
+{
+  "deduplicate": false,
+  "diagnosis": "The trace supports a rewrite-selection bottleneck hypothesis, but does not identify a physical SQL bottleneck or establish duplicate candidates.",
+  "instruction": "Use a plan-guided rewrite workflow: inspect the SQL, schema, and available execution plans before generating two structurally distinct exact rewrites per task. If plans reveal an avoidable operation, target that operation; otherwise retain uncertainty. Preserve duplicates, NULL behavior, ordering, types, and all other SQL semantics. Keep the external evaluator unchanged. Store improvement memory only as conditional rules tied to observed query or plan features; do not generalize rewrite benefits from these traces or make performance claims.",
+  "preflight": true
+}

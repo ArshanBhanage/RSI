@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Two-stage aggregation preserves timestamp multiplicities and the NULL-hour group; casting the summed counts preserves BIGINT. Schema and plans were not supplied, so execution effects remain uncertain.",
+      "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(n) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS n FROM trips GROUP BY tpep_pickup_datetime) AS grouped GROUP BY 1"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Window counting followed by DISTINCT produces one row per hour, including the NULL-hour group, with BIGINT counts. Without supplied schema or plans, no avoidable plan operation is established.",
+      "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Filtered aggregation with HAVING retains only routes with qualifying rows, preserving duplicate counts, NULL route keys, and the original calendar-day predicate. Schema and plans were not supplied; execution effects remain uncertain.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY 1, 2 HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Filtering before window counting and DISTINCT preserves qualifying route multiplicities, NULL grouping behavior, and BIGINT counts. Without supplied schema or plans, no avoidable plan operation is established.",
+      "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7"
+    }
+  ]
+}

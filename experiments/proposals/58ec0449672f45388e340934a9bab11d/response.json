@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "No schema or plans were supplied. Preaggregate identical timestamps, then combine their counts by the original hour expression. NULL timestamps remain a group; casting SUM to BIGINT preserves COUNT(*)'s DuckDB type. No ordering or limit is introduced.",
+      "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(n) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS n FROM trips GROUP BY tpep_pickup_datetime) AS grouped GROUP BY 1"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Split disjoint NULL and non-NULL timestamp inputs with UNION ALL. HAVING suppresses an empty NULL branch, preserving group presence, duplicate counts, aliases, and original output types. The original hour expression handles all non-NULL dates.",
+      "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) AS trips FROM trips WHERE tpep_pickup_datetime IS NOT NULL GROUP BY 1 UNION ALL SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) AS trips FROM trips WHERE tpep_pickup_datetime IS NULL GROUP BY 1 HAVING COUNT(*) > 0"
+    },
+    {
+      "query_id": "q05",
+      "reason": "No schema or plans were supplied. Move the unchanged day predicate into a filtered aggregate and retain only groups with matching rows. This preserves NULL route keys, predicate NULL behavior, duplicate counts, and COUNT(*)'s BIGINT type without assuming a month or year.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY 1, 2 HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Preaggregate by route and extracted day, apply the original day comparison, then combine counts by route. NULL days remain excluded and anomalous dates retain their original treatment. Casting SUM to BIGINT preserves the original count type. Supplied feedback establishes no general rewrite preference.",
+      "sql": "SELECT pickup, dropoff, CAST(SUM(n) AS BIGINT) AS trips FROM (SELECT PULocationID AS pickup, DOLocationID AS dropoff, EXTRACT(day FROM tpep_pickup_datetime) AS pickup_day, COUNT(*) AS n FROM trips GROUP BY 1, 2, 3) AS grouped WHERE pickup_day <= 7 GROUP BY 1, 2"
+    }
+  ]
+}

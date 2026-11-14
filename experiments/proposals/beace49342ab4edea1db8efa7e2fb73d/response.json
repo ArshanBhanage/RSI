@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "query_id": "q07",
+      "reason": "Aggregates pickups before the left join, retaining duplicate zone matches and NULL borough groups. Casting the summed counts to BIGINT preserves DuckDB\u2019s COUNT(*) output type.",
+      "sql": "WITH pickups AS (SELECT PULocationID, COUNT(*) AS n FROM trips GROUP BY PULocationID) SELECT z.Borough AS borough, CAST(SUM(p.n) AS BIGINT) AS trips FROM pickups p LEFT JOIN zones z ON p.PULocationID = z.LocationID GROUP BY z.Borough"
+    },
+    {
+      "query_id": "q08",
+      "reason": "Replaces the rolling window with a join on observed-day row numbers. Preserves anomalous dates, the NULL-day group, partial initial frames, and AVG\u2019s DOUBLE output type.",
+      "sql": "WITH daily AS (SELECT CAST(tpep_pickup_datetime AS DATE) AS day, COUNT(*) AS trips FROM trips GROUP BY 1), numbered AS (SELECT day, trips, ROW_NUMBER() OVER (ORDER BY day ASC NULLS LAST) AS seq FROM daily) SELECT a.day AS day, AVG(b.trips) AS rolling FROM numbered a JOIN numbered b ON b.seq BETWEEN a.seq - 2 AND a.seq GROUP BY a.seq, a.day ORDER BY a.day ASC NULLS LAST"
+    }
+  ]
+}

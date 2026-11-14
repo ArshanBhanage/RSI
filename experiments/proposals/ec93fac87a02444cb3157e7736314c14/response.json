@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Two-stage aggregation by hour and pickup zone, with an explicit BIGINT cast preserving COUNT(*)'s DuckDB type.",
+      "sql": "SELECT hour, CAST(SUM(partial_trips) AS BIGINT) AS trips FROM (SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, PULocationID, COUNT(*) AS partial_trips FROM trips GROUP BY 1, 2) AS partial_counts GROUP BY hour"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Window counting followed by DISTINCT preserves hourly counts, including the NULL-hour group.",
+      "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Filtered aggregation with HAVING retains exactly the routes having qualifying rows and preserves BIGINT counts.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY 1, 2 HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Window counting over qualifying rows followed by DISTINCT preserves route counts, NULL route keys, and the original calendar-day predicate.",
+      "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7"
+    }
+  ]
+}

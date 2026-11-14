@@ -1,0 +1,6 @@
+{
+  "deduplicate": false,
+  "diagnosis": "Candidate selection needs better evidence. All supplied checks passed; repeated query IDs do not establish duplicate SQL or identify a preferred rewrite structure.",
+  "instruction": "Use a preflight-guided rewrite workflow: inspect SQL, schema, and available plans before choosing two structurally distinct candidates. Apply a rewrite only when its prerequisites support exact preservation of duplicates, NULL behavior, types, ordering, and limits. Keep the external evaluator unchanged. Retain improvement memory only as conditional rules tied to verified structural prerequisites and evaluator outcomes; infer no general rewrite preference from this trace.",
+  "preflight": true
+}

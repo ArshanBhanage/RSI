@@ -1,0 +1,6 @@
+{
+  "deduplicate": false,
+  "diagnosis": "All supplied evaluations passed correctness checks. The trace lacks SQL and execution plans, so it cannot localize a physical bottleneck or establish candidate duplication. Use a plan-guided rewrite workflow.",
+  "instruction": "Preflight each task by inspecting its SQL and available execution plan. Explore two structurally distinct exact rewrites, targeting repeated work or intermediate expansion only when supported by task-specific evidence. Preserve duplicates, NULL behavior, ordering, types, and all other SQL semantics. Keep the external evaluator unchanged and use it to assess candidates. Record improvement memory only as conditional rules linking observed query or plan conditions to evaluator-supported outcomes; do not generalize across tasks without evidence or assert performance gains.",
+  "preflight": true
+}

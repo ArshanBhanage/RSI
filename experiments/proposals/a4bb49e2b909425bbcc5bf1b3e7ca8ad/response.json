@@ -1,0 +1,6 @@
+{
+  "deduplicate": false,
+  "diagnosis": "The trace points to rewrite selection as the bottleneck. No correctness failures are reported, and repeated query IDs do not establish duplicate SQL.",
+  "instruction": "Use the candidate-generation component workflow: explore two structurally distinct exact SQL rewrites per task. If external evaluation confirms correctness but rejects a candidate on performance, use that evidence to revise the next structural hypothesis only for that task. Preserve exact SQL semantics and the unchanged external evaluator; do not generalize results across tasks or claim performance gains.",
+  "preflight": false
+}
