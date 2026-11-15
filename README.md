@@ -1,20 +1,32 @@
 # QueryForge-RSI
 
-An assignment implementation investigating recursive improvement of SQL-search procedures over authentic NYC TLC trip records.
+QueryForge-RSI asks whether an improver can improve **how it searches for correctness-preserving analytical SQL rewrites** under a fixed budget. It uses checksum-verified January and February 2025 NYC TLC yellow-taxi records, DuckDB, controlled real Codex CLI proposals and an immutable evaluator in a non-root, network-disabled Docker container.
 
-**Status: M00 in progress. No SQL experiment, codelab or RSI method is verified yet.**
+The target artifact is SQL. Three meta-improver adaptations revise the search procedure for a later fresh generation: DREAM-RSI policy replay, AIDE²-inspired harness evolution and RSIFlow bottleneck/skill routing. Promotion requires correctness and at least 1.02× on both search tasks. Failed generations remain evidence.
 
-- [Pinned course sources and 17-lab mapping](docs/references/source-lock.md)
-- [Method fidelity and release audit](research/method-fidelity.md)
-- [Milestone gates](docs/milestones.md)
-- [Delivery status](docs/delivery-status.md)
-
-Run the implemented source-integrity check with Python 3:
+## Reproduce
 
 ```sh
-python3 scripts/verify_sources.py
+uv sync --locked
+uv run queryforge doctor
+uv run queryforge data fetch
+uv run queryforge data verify
+uv run queryforge benchmark baseline
+uv run pytest -q
+uv run queryforge compare --verify
+bash scripts/check_delivery.sh
 ```
 
-The command downloads immutable source files, checks SHA-256 hashes and validates all 17 lesson headings. `--offline` uses only hash-verified cached source bytes. It does not execute upstream synthetic demos or claim scientific results.
+New model experiments require authenticated Codex CLI access and Docker. Existing reports can be audited offline. See [setup](docs/setup.md), [architecture](docs/architecture.md), [protocol](docs/evaluation-protocol.md), [method fidelity](research/method-fidelity.md), [results](research/results.md) and [delivery status](docs/delivery-status.md).
 
-The destination is [ArshanBhanage/RSI](https://github.com/ArshanBhanage/RSI). Website and required lab/method videos are not published. Milestones proceed sequentially only after their recorded execution and publication gates pass.
+## Evidence map
+
+- [17 Section 10 codelabs](codelabs) and their machine-readable [`experiments/labs`](experiments/labs)
+- [DREAM-RSI](research/methods/dream_rsi), [AIDE² adaptation](research/methods/aide2), [RSIFlow](research/methods/rsiflow)
+- [Matched comparison](experiments/reports/comparison.json)
+- [Submission website](site)
+- [Video manifest](videos/VIDEO_MANIFEST.json): owner deferred recording/upload; no YouTube completion is claimed
+
+All 17 codelab code/evidence gates pass. The principal comparison uses three generations × four candidates for each of two seeds, plus one two-task held-out evaluation after freezing. Results retain regressions and correctness failures.
+
+Repository: <https://github.com/ArshanBhanage/RSI> · Website: <https://arshanbhanage.github.io/RSI/>

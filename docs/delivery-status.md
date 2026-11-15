@@ -1,11 +1,13 @@
 # Delivery status
 
-M00–M03 and L10.01–L10.05 have verified code executions. The earlier provider credit failure is retained as evidence and resolved by the successful L10.05 retry. L10.06 is next; later gates have not passed.
+M00–M03, all 17 Section 10 labs, all three principal method adaptations and the matched comparison have real executions and committed evidence. Provider failures are preserved alongside successful retries.
 
-- Verified lab code: 5/17
-- Verified principal methods: 0/3
+- Verified lab code: 17/17
+- Verified principal methods: 3/3, two seeds each
+- Verified matched comparison runs: 8/8
 - Required videos recorded: 0/20
 - Verified YouTube links: 0/20
-- Website and GitHub publication: pending final gates
+- Website: built locally; Pages publication pending final push
+- Repository: final verification and publication in progress
 
-The owner deferred video work and will handle uploads. CODE_VERIFIED does not mean the full submission requirement has passed. See `milestones.md` and the authentic experiment reports for evidence.
+The owner deferred video work and will handle uploads. The code/research publication can complete, but the assignment's 20-video gate remains explicitly incomplete.
