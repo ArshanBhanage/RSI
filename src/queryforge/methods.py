@@ -13,6 +13,40 @@ from .search import proposals
 METHODS = {"dream-rsi", "aide2", "rsiflow", "fixed"}
 
 
+def _fixed_candidates(query_ids: list[str]) -> dict:
+    workload = {
+        row["id"]: row["sql"]
+        for row in json.loads((ROOT / "experiments/workload/queries.json").read_text())
+    }
+    if query_ids == ["q01", "q05"]:
+        candidates = [
+            {"query_id": "q01", "sql": workload["q01"], "reason": "identity baseline"},
+            {
+                "query_id": "q01",
+                "sql": "WITH source AS (SELECT tpep_pickup_datetime FROM trips) SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) AS trips FROM source GROUP BY 1 ORDER BY 1",
+                "reason": "fixed CTE rule",
+            },
+            {"query_id": "q05", "sql": workload["q05"], "reason": "identity baseline"},
+            {
+                "query_id": "q05",
+                "sql": "WITH source AS (SELECT PULocationID, DOLocationID FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) AS trips FROM source GROUP BY 1, 2",
+                "reason": "fixed early-filter CTE rule",
+            },
+        ]
+    elif query_ids == ["q07", "q08"]:
+        candidates = [
+            {
+                "query_id": query_id,
+                "sql": workload[query_id],
+                "reason": "fixed identity transfer rule",
+            }
+            for query_id in query_ids
+        ]
+    else:
+        raise ValueError("Unsupported fixed workload")
+    return {"proposal_id": "deterministic-fixed-rules-v1", "response": {"candidates": candidates}}
+
+
 def _score(records: list[dict]) -> dict:
     by_task = {}
     for query_id in ["q01", "q05"]:
@@ -65,7 +99,11 @@ def run(method: str, seed: int) -> dict:
     stable_state = state
     pending_revision: dict | None = None
     for generation in range(3):
-        batch = proposals(["q01", "q05"], 4, state["instruction"], accumulated[-8:])
+        batch = (
+            _fixed_candidates(["q01", "q05"])
+            if method == "fixed"
+            else proposals(["q01", "q05"], 4, state["instruction"], accumulated[-8:])
+        )
         measured = evaluate(
             batch["response"]["candidates"], method, generation=generation, seed=seed, run_id=run_id
         )
@@ -107,11 +145,15 @@ def run(method: str, seed: int) -> dict:
             state = candidate_state
             pending_revision = revision
         lineage.append(node)
-    final_batch = proposals(
-        ["q07", "q08"],
-        2,
-        state["instruction"] + " This is the single final transfer proposal.",
-        accumulated[-8:],
+    final_batch = (
+        _fixed_candidates(["q07", "q08"])
+        if method == "fixed"
+        else proposals(
+            ["q07", "q08"],
+            2,
+            state["instruction"] + " This is the single final transfer proposal.",
+            accumulated[-8:],
+        )
     )
     final = evaluate(
         final_batch["response"]["candidates"],
@@ -139,6 +181,9 @@ def run(method: str, seed: int) -> dict:
             "rsiflow": "Released skill/workflow-variant adaptation; executable Meta remains fixed.",
             "fixed": "Non-evolving matched evaluator-call baseline.",
         }[method],
+        "protocol_note": "Fixed uses deterministic non-evolving SQL rules and no model calls; adaptive conditions include meta calls. The switch followed three provider timeouts and is disclosed in threats-to-validity."
+        if method == "fixed"
+        else None,
     }
     save(destination, report)
     return report
@@ -162,24 +207,39 @@ def compare(verify: bool = True) -> dict:
     rows = []
     for method, runs in reports.items():
         for report in runs:
-            search_records = [record for node in report["lineage"] for record in node["evaluation"]["records"]]
+            search_records = [
+                record for node in report["lineage"] for record in node["evaluation"]["records"]
+            ]
             final_records = report["heldout_evaluation"]["records"]
-            rows.append({
-                "method": method, "seed": report["seed"],
-                "search_candidates": len(search_records),
-                "search_correct": sum(row["correct"] for row in search_records),
-                "accepted_generations": report["accepted_generations"],
-                "heldout_correct": sum(row["correct"] for row in final_records),
-                "heldout_speedups": [row["speedup"] for row in final_records],
-                "heldout_geomean": math.prod(row["speedup"] if row["correct"] else 0 for row in final_records) ** (1 / len(final_records)),
-                "run_id": report["run_id"], "frozen_state_sha256": report["frozen_state_sha256"],
-            })
+            rows.append(
+                {
+                    "method": method,
+                    "seed": report["seed"],
+                    "search_candidates": len(search_records),
+                    "search_correct": sum(row["correct"] for row in search_records),
+                    "accepted_generations": report["accepted_generations"],
+                    "heldout_correct": sum(row["correct"] for row in final_records),
+                    "heldout_speedups": [row["speedup"] for row in final_records],
+                    "heldout_geomean": math.prod(
+                        row["speedup"] if row["correct"] else 0 for row in final_records
+                    )
+                    ** (1 / len(final_records)),
+                    "run_id": report["run_id"],
+                    "frozen_state_sha256": report["frozen_state_sha256"],
+                }
+            )
     if verify:
-        assert all(row["search_candidates"] == budgets["generations"] * budgets["candidates_per_generation"] for row in rows)
+        assert all(
+            row["search_candidates"]
+            == budgets["generations"] * budgets["candidates_per_generation"]
+            for row in rows
+        )
         assert {row["seed"] for row in rows} == set(budgets["seeds"])
         assert {row["method"] for row in rows} == set(methods)
     result = {
-        "verified": verify, "budget_sha256": identity(budgets), "rows": rows,
+        "verified": verify,
+        "budget_sha256": identity(budgets),
+        "rows": rows,
         "interpretation": "Matched 12-candidate search budgets and a single two-task held-out transfer evaluation per seed. Meta-call costs differ and are visible in proposal records. Small samples and shared model/provider limit inference; zero gains and regressions are retained.",
     }
     save(ROOT / "experiments/reports/comparison.json", result)

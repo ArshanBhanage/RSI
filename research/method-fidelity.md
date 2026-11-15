@@ -1,6 +1,6 @@
-# Method fidelity at M00
+# Method fidelity
 
-No method has been executed. This table records source-supported mechanisms and intended adaptations, not completed implementations or reproduced performance.
+The three QueryForge adaptations have now executed for two seeds each. This table separates source-supported mechanisms from the laptop SQL adaptations; no paper benchmark result is reproduced or reused as project evidence.
 
 | Method | Source and release | Changed object / inheritance | QueryForge boundary |
 |---|---|---|---|

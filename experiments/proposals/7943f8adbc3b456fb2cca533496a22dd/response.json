@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "query_id": "q07",
+      "reason": "Aggregate pickups before the left join, retaining duplicate zone matches and unmatched NULL boroughs. Cast the summed counts to BIGINT to preserve COUNT(*)'s DuckDB type.",
+      "sql": "SELECT z.Borough AS borough, CAST(SUM(t.trips) AS BIGINT) AS trips FROM (SELECT PULocationID, COUNT(*) AS trips FROM trips GROUP BY PULocationID) t LEFT JOIN zones z ON t.PULocationID = z.LocationID GROUP BY z.Borough"
+    },
+    {
+      "query_id": "q08",
+      "reason": "Apply the window directly over grouped daily counts, preserving observed-day frames, NULL and anomalous dates, and AVG's DuckDB result type.",
+      "sql": "SELECT CAST(tpep_pickup_datetime AS DATE) AS day, AVG(COUNT(*)) OVER (ORDER BY CAST(tpep_pickup_datetime AS DATE) ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rolling FROM trips GROUP BY CAST(tpep_pickup_datetime AS DATE)"
+    }
+  ]
+}

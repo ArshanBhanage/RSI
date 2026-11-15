@@ -1,0 +1,127 @@
+{
+  "budget_sha256": "65f8d229dd9a07c62b98f255dbfcd2b5d279fd0f4984269825bd6bba0aca50bc",
+  "interpretation": "Matched 12-candidate search budgets and a single two-task held-out transfer evaluation per seed. Meta-call costs differ and are visible in proposal records. Small samples and shared model/provider limit inference; zero gains and regressions are retained.",
+  "rows": [
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 2,
+      "heldout_geomean": 1.010514588548562,
+      "heldout_speedups": [
+        1.0052403467671678,
+        1.0158165029422406
+      ],
+      "method": "fixed",
+      "run_id": "b4546164611f45f19179f843190e1204",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 17
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 2,
+      "heldout_geomean": 1.0256425854285915,
+      "heldout_speedups": [
+        1.0578649041371355,
+        0.9944017510465382
+      ],
+      "method": "fixed",
+      "run_id": "4f965fcdc9104b40b1671c4ace104666",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 29
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 1,
+      "heldout_geomean": 0.0,
+      "heldout_speedups": [
+        6.173959897283719,
+        0
+      ],
+      "method": "dream-rsi",
+      "run_id": "b5f53b50d3cf455e8c13f59f3f497d1a",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 17
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 1,
+      "heldout_geomean": 0.0,
+      "heldout_speedups": [
+        6.109046644926276,
+        0
+      ],
+      "method": "dream-rsi",
+      "run_id": "35beefdb51ec484e9f912b62112ac71b",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 29
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 1,
+      "heldout_geomean": 0.0,
+      "heldout_speedups": [
+        6.0750045520360185,
+        0
+      ],
+      "method": "aide2",
+      "run_id": "353827a2703e4cd8a5658860f3667bff",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 17
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 2,
+      "heldout_geomean": 1.2222079998592186,
+      "heldout_speedups": [
+        4.707521834258952,
+        0.3173203327595444
+      ],
+      "method": "aide2",
+      "run_id": "d036be300f3c4d52bd6503aac5292567",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 29
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 1,
+      "heldout_geomean": 0.0,
+      "heldout_speedups": [
+        6.917699097495642,
+        0
+      ],
+      "method": "rsiflow",
+      "run_id": "3632862979f74f569c8dc1a849ef3d54",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 17
+    },
+    {
+      "accepted_generations": 0,
+      "frozen_state_sha256": "42915125d627970f4db97940e80f06606324ae1498ba2a54652be5cfa1958333",
+      "heldout_correct": 1,
+      "heldout_geomean": 0.0,
+      "heldout_speedups": [
+        6.062310654006466,
+        0
+      ],
+      "method": "rsiflow",
+      "run_id": "c655445da55c42c4945ffc682b19938a",
+      "search_candidates": 12,
+      "search_correct": 12,
+      "seed": 29
+    }
+  ],
+  "verified": true
+}

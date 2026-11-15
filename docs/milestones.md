@@ -25,8 +25,8 @@ Order is mandatory. On November 11, 2026 the owner explicitly deferred videos un
 | L10.15 | CODE_VERIFIED | `experiments/labs/10.15.json`; video deferred. |
 | L10.16 | CODE_VERIFIED | `experiments/labs/10.16.json`; video deferred. |
 | L10.17 | CODE_VERIFIED | `experiments/labs/10.17.json`; video deferred. |
-| X01 | NOT_STARTED | Prior milestone must pass. |
-| X02 | NOT_STARTED | Prior milestone must pass. |
-| X03 | NOT_STARTED | Prior milestone must pass. |
-| F01 | NOT_STARTED | Prior milestone must pass. |
-| F02 | NOT_STARTED | Prior milestone must pass. |
+| X01 | CODE_VERIFIED | Two DREAM-RSI seeds executed; zero revisions accepted; video deferred. |
+| X02 | CODE_VERIFIED | Two AIDE²-adaptation seeds executed; zero descendants accepted; video deferred. |
+| X03 | CODE_VERIFIED | Two RSIFlow seeds executed; zero workflow revisions accepted; video deferred. |
+| F01 | CODE_VERIFIED | `experiments/reports/comparison.json`; 8 matched runs, 96 search evaluations, 16 held-out candidates. |
+| F02 | IN_PROGRESS | Static site built; final checks, push and Pages verification remain. Videos deferred by owner. |

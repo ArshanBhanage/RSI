@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "query_id": "q01",
+      "reason": "Use window counting followed by deduplication, preserving NULL hours and BIGINT counts.",
+      "sql": "SELECT DISTINCT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, COUNT(*) OVER (PARTITION BY EXTRACT(hour FROM tpep_pickup_datetime)) AS trips FROM trips"
+    },
+    {
+      "query_id": "q01",
+      "reason": "Count each distinct pickup timestamp first, then combine counts by hour. Cast the sum to preserve the original BIGINT type.",
+      "sql": "SELECT EXTRACT(hour FROM tpep_pickup_datetime) AS hour, CAST(SUM(timestamp_trips) AS BIGINT) AS trips FROM (SELECT tpep_pickup_datetime, COUNT(*) AS timestamp_trips FROM trips GROUP BY tpep_pickup_datetime) AS timestamp_counts GROUP BY 1"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Filter qualifying calendar days, count each route with a window, and deduplicate the results while preserving NULL route keys.",
+      "sql": "SELECT DISTINCT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) OVER (PARTITION BY PULocationID, DOLocationID) AS trips FROM trips WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7"
+    },
+    {
+      "query_id": "q05",
+      "reason": "Use conditional aggregation and exclude routes with no qualifying rows. Retain the exact calendar-day predicate and BIGINT count type.",
+      "sql": "SELECT PULocationID AS pickup, DOLocationID AS dropoff, COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) AS trips FROM trips GROUP BY PULocationID, DOLocationID HAVING COUNT(*) FILTER (WHERE EXTRACT(day FROM tpep_pickup_datetime) <= 7) > 0"
+    }
+  ]
+}
