@@ -7,7 +7,7 @@ M00–M03, all 17 Section 10 labs, all three principal method adaptations and th
 - Verified matched comparison runs: 8/8
 - Required videos recorded: 0/20
 - Verified YouTube links: 0/20
-- Website: built locally; Pages publication pending final push
-- Repository: final verification and publication in progress
+- Website: published and HTTP 200 verified at `https://arshanbhanage.github.io/RSI/`
+- Repository: public at `https://github.com/ArshanBhanage/RSI`; CI and Pages workflows pass
 
 The owner deferred video work and will handle uploads. The code/research publication can complete, but the assignment's 20-video gate remains explicitly incomplete.

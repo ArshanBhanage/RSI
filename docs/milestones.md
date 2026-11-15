@@ -29,4 +29,4 @@ Order is mandatory. On November 11, 2026 the owner explicitly deferred videos un
 | X02 | CODE_VERIFIED | Two AIDE²-adaptation seeds executed; zero descendants accepted; video deferred. |
 | X03 | CODE_VERIFIED | Two RSIFlow seeds executed; zero workflow revisions accepted; video deferred. |
 | F01 | CODE_VERIFIED | `experiments/reports/comparison.json`; 8 matched runs, 96 search evaluations, 16 held-out candidates. |
-| F02 | IN_PROGRESS | Static site built; final checks, push and Pages verification remain. Videos deferred by owner. |
+| F02 | CODE_PUBLISHED | Public repository, passing CI and working GitHub Pages verified. Assignment video gate remains pending by owner. |
