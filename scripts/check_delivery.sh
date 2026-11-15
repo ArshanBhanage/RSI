@@ -10,7 +10,7 @@ test -f site/index.html
 for id in $(seq -w 1 17); do test -f "site/labs/10.$id/index.html"; done
 for method in dream-rsi aide2 rsiflow; do test -f "site/methods/$method/index.html"; done
 test "$(git ls-files '.env' 'data/raw/*' '.local/*' 'videos/renders/*' | wc -l | tr -d ' ')" = 0
-if git grep -nE '(ghp_|sk-[A-Za-z0-9]{20,}|BEGIN (RSA|OPENSSH) PRIVATE KEY)' -- . ':!uv.lock'; then
+if git grep -nE '(ghp_|sk-[A-Za-z0-9]{20,}|BEGIN (RSA|OPENSSH) PRIVATE KEY)' -- . ':!uv.lock' ':!scripts/check_delivery.sh'; then
   echo 'Potential secret detected' >&2
   exit 1
 fi
